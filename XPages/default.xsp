@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Start"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+
+	<xc:ccAppLayout>
+		<xp:this.facets>
+			<xp:panel xp:key="facetLeft">
+				
+				<xp:image url="/scanner.png" id="image2"
+					xp:key="facetLeft" style="margin:0 0 0 20px;">
+				</xp:image>
+
+
+				<xe:widgetContainer id="widgetContainer3"
+					titleBarText="Donate" style="margin-top: 20px">
+					<form action="https://www.paypal.com/cgi-bin/webscr"
+						method="post">
+						<input type="hidden" name="cmd"
+							value="_s-xclick">
+						</input>
+						<input type="hidden" name="hosted_button_id"
+							value="RMJ3ZTKP2JUG6">
+						</input>
+						<input type="image"
+							src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+							border="0" name="submit"
+							alt="PayPal - The safer, easier way to pay online!">
+						</input>
+						<img alt="" border="0"
+							src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
+							width="1" height="1">
+						</img>
+					</form>
+				</xe:widgetContainer></xp:panel>
+
+			<xc:ccDefault xp:key="facetMiddle"></xc:ccDefault>
+		</xp:this.facets>
+	</xc:ccAppLayout>
+</xp:view>

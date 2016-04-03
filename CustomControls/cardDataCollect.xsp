@@ -1,0 +1,1729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+
+
+
+
+	
+	
+	<xe:formTable id="tableContactDetails" formTitle="Contact"
+		formDescription="Please complete the form as much as you can..."
+		labelPosition="above"><xp:this.facets>
+	<xc:cardDataActions xp:key="footer"><xc:this.rendered><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID == ""|| eventID == null){
+	return true;
+}
+else {
+	return false;
+}}]]></xc:this.rendered></xc:cardDataActions></xp:this.facets>
+		<xe:formRow id="formRow1" for="inputLastname" label="Lastname:"
+			labelPosition="inherit">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("lastname", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Lastname}"
+				id="inputLastname">
+
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("lastname", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Lastname", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A lastname is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow2" label="Firstname:"
+			for="inputFirstname" labelPosition="inherit">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("firstname", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Firstname}"
+				id="inputFirstname">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("firstname", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Firstname", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A firstname is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow3" label="Prefix:" for="inputPrefix" labelPosition="inherit">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("prefix", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Prefix}"
+				id="inputPrefix">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("prefix", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A prefix is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Prefix", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText></xe:formRow>
+		<xe:formRow id="formRow4" label="Title:" for="inputTitle" labelPosition="inherit">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("title", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Title}" id="inputTitle">
+
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("title", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A title is required">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Title", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText></xe:formRow>
+		<xe:formRow id="formRow5" label="Suffix:" for="inputSuffix">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("suffix", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Suffix}"
+				id="inputSuffix">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("suffix", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A suffix is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Suffix", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.readonly><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.readonly></xp:inputText></xe:formRow>
+		<xe:formRow id="formRow6" label="Middlename:" for="inputMiddlename">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("middlename", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Middlename}"
+				id="inputMiddlename">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("middlename", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A middlename is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Middlename", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText></xe:formRow>
+		<xe:formRow id="formRow7" label="Name:" for="inputName">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("name", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Name}" id="inputName">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("name", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A name is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Name", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText></xe:formRow>
+		<xe:formRow id="formRow8" label="Company:" for="inputCompany">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("company", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Company}"
+				id="inputCompany">
+				<xp:this.validators>
+
+					<xp:validateLength minimum="2"></xp:validateLength>
+					<xp:validateRequired
+						message="A company is required...">
+					</xp:validateRequired>
+				</xp:this.validators>
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("company", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+			<xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Company", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow9" label="Address:" for="inputAddress">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("address", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Address}"
+				id="inputAddress">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("address", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="An address is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Address", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow10" label="Street:" for="inputStreet">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("street", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Street}"
+				id="inputStreet">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("street", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A street is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Street", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow11" label="Address 1:"
+			for="inputAddr1">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("addr1", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Addr1}" id="inputAddr1">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("addr1", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A 1st address is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Addr1", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow12" label="Address 2:"
+			for="inputAddr2">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("addr2", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Addr2}" id="inputAddr2">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("addr2", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A 2nd address is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Addr2", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow13" label="Address 3:"
+			for="inputAddr3">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("addr3", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Addr3}" id="inputAddr3">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("addr3", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A 3rd address is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Addr3", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow14" label="City:" for="inputCity">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("city", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_City}" id="inputCity">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("city", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A city is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("City", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow15" label="State:" for="inputState">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("state", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_State}" id="inputState">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("state", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A state is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("State", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow16" label="Postal code:"
+			for="inputPostalCode">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("postalcode", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_PostalCode}"
+				id="inputPostalCode">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("postalcode", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A postal code is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Postalcode", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow17" label="Country:"
+			for="inputCountry">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("country", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Country}"
+				id="inputCountry">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("country", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A country is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Country", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow18" label="Telephone:"
+			for="inputTelephone">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("telephone", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Telephone}"
+				id="inputTelephone">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("telephone", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A telephone is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Telephone", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow19" label="Fax:" for="inputFax">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("fax", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Fax}" id="inputFax">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("fax", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A fax is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Fax", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow20" label="Email:" for="inputEmail">
+			<xe:this.loaded><![CDATA[${javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("email", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.loaded>
+			<xp:inputText value="#{document1.Tx_Email}" id="inputEmail">
+				<xp:this.validators>
+
+					<xp:validateLength minimum="2"></xp:validateLength>
+					<xp:validateRequired
+						message="An email is required...">
+					</xp:validateRequired>
+				</xp:this.validators>
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("email", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+			<xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Email", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow21" label="Website:"
+			for="inputWebsite">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("website", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputText value="#{document1.Tx_Website}"
+				id="inputWebsite">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("website", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A website is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Website", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputText>
+		</xe:formRow>
+		
+		<xe:formRow id="formRow22" label="Other:" for="inputOther">
+			<xe:this.rendered><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("other", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+			<xp:inputTextarea value="#{document1.Tx_Other}"
+				id="inputOther">
+				<xp:this.styleClass><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("other", @LowerCase(fields)) == @True()){
+	return "lotusText requiredField";
+}
+else{
+	return "lotusText";
+}}]]></xp:this.styleClass>
+				<xp:this.validators>
+					<xp:validateRequired
+						message="Other information is required...">
+					</xp:validateRequired>
+				</xp:this.validators><xp:this.required><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if(@IsMember("Other", fields) == @True()){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.required><xp:this.disabled><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.disabled></xp:inputTextarea>
+
+		</xe:formRow>
+		<xp:messages id="messages1"></xp:messages>
+	</xe:formTable>
+	<xp:inputHidden id="inputText1"
+		value="#{document1.Tx_EventReference}">
+		<xp:this.defaultValue><![CDATA[${javascript:sessionScope.get("tmpEventID");}]]></xp:this.defaultValue>
+	</xp:inputHidden>
+</xp:view>

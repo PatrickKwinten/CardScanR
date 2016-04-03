@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:table style="width:100.0%">
+		<xp:tr>
+			<xp:td valign="top" align="left">
+
+				<xp:panel>
+					<xp:panel styleClass="carroussel">
+						<xp:table>
+							<xp:tr>
+								<xp:td valign="top">
+									<xp:image url="/scanner.png" id="image2" />
+								</xp:td>
+								<xp:td valign="top">
+									<xp:panel styleClass="lotusAboutText ">
+										<xp:text escape="true" id="computedField10" tagName="h1"
+											style="margin-top:20px;color:#4275AA;font-size:3em;">
+											<xp:this.value><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.title !== ""){
+	return tmp.title;
+}
+else{
+	return database.getTitle();
+}}]]></xp:this.value>
+										</xp:text>
+										<xp:br />
+										<xp:text escape="true" id="computedField12" tagName="h3"
+											style="color:#4275AA;margin-top:-10px;font-size:1.5em;">
+											<xp:this.value><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.titlesub !== ""){
+	return tmp.titlesub;
+}
+else{
+	return "";
+}}]]></xp:this.value>
+										<xp:this.rendered><![CDATA[#{javascript://sessionScope.get("titlebarSubtitle")
+var tmp = applicationScope.initPref;
+if (tmp.titlesub !== ""){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.rendered></xp:text>
+										<xp:panel styleClass="lotusHeader" style="margin-top:20px;">
+											<h1>
+												Frequently Asked Questions
+										</h1>
+										</xp:panel>
+										<xp:panel>
+											Before you start using 
+											<xp:text escape="true" id="computedField1">
+												<xp:this.value><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.title !== ""){
+	return tmp.title;
+}
+else{
+	return database.getTitle();
+}}]]></xp:this.value>
+											</xp:text>
+											, please have a look at the following Frequently
+											Asked Questions (FAQ) to help you
+											getting started.
+										</xp:panel>
+									</xp:panel>
+								</xp:td>
+							</xp:tr>
+						</xp:table>
+
+
+
+						<xp:br />
+						<xp:text escape="true" id="h2general" tagName="h2">
+							<xp:this.value><![CDATA[#{javascript:return "General"}]]></xp:this.value>
+						</xp:text>
+						<ol class="faqbullets">
+							<li>
+								<xp:link escape="true" id="Whatis" value="#whatis">
+									<xp:this.text><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.title !== ""){
+	return "What is " + tmp.title;
+}
+else{
+	return "What is " + database.getTitle();
+}
+}]]></xp:this.text>
+								</xp:link>
+							</li>
+							<li>
+								<xp:link escape="true"
+									text="Don't we have enough contact management tools already?"
+									id="link4" value="#platform" />
+
+							</li>
+
+						</ol>
+
+
+						<xp:text escape="true" id="h2Using"
+							tagName="h2">
+							<xp:this.value><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.title !== ""){
+	return "Using " + tmp.title;
+}
+else{
+	return "Using " + database.getTitle();
+}}]]></xp:this.value>
+						</xp:text>
+						<ol class="faqbullets">
+							<li>
+								<xp:link escape="true" text="How do I capture a contact?"
+									id="link9" value="#using" />
+
+							</li>
+							<li>
+								<xp:link escape="true" text="How do I view the results of an event?"
+									id="link10" value="#using" />
+
+							</li>
+						</ol>
+						
+						<xp:text escape="true" id="computedField2" tagName="h2">
+							<xp:this.value><![CDATA[#{javascript:return "What's next?"}]]></xp:this.value>
+						</xp:text>
+						<ol>
+						<li>
+								<xp:link escape="true" text="Extend it!"
+									id="link1" value="#next" />
+
+							</li>
+						</ol>
+
+					</xp:panel>
+
+					<xp:br />
+					<xp:panel styleClass="lotusCaption">
+						General
+					</xp:panel>
+
+					<xp:panel styleClass="FAQContainer">
+						<a name="#whatis">
+							<xp:br />
+						</a>
+						<xp:panel styleClass="FAQQuestion"
+							style="font-size: 1.3em;font-weight:bold;">
+
+							<xp:text escape="true" id="computedField3"
+								tagName="span" style="font-weight:bold;">
+								<xp:this.value><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.title !== ""){
+	return "What is " + tmp.title;
+}
+else{
+	return "What is " + database.getTitle();
+}}]]></xp:this.value>
+							</xp:text>
+							?
+						</xp:panel>
+						<xp:text escape="true" id="computedField4">
+							<xp:this.value><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.title !== ""){
+	return "What is " + tmp.title;
+}
+else{
+	return "What is " + database.getTitle();
+}}]]></xp:this.value>
+						</xp:text>
+						&#160;is an application for capturing contacts. The
+						purpose of this
+						application is to make it quick and&#160;easy
+						to scan
+						paper&#160;business cards and distribute them in Lotus Notes.
+						<xp:br />
+						<xp:br />
+						The application can be used as a module for other applications eg
+						surveys, enquiries, contact management.
+					</xp:panel>
+
+					<xp:panel styleClass="FAQContainer">
+						<a name="platform">
+							<xp:br />
+						</a>
+						<xp:panel
+							style="font-size:1.3em;font-weight:bold;">
+							Don't we have enough contact management
+							tools already?
+						</xp:panel>
+
+						<xp:text escape="true" id="computedField6">
+							<xp:this.value><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.title !== ""){
+	return "What is " + tmp.title;
+}
+else{
+	return "What is " + database.getTitle();
+}}]]></xp:this.value>
+						</xp:text>
+						is not a heavy&#160;tool to capture, organize and manage your
+						contacts, there are better tools for
+						that.
+						<xp:text escape="true" id="computedField7">
+							<xp:this.value><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.title !== ""){
+	return "What is " + tmp.title;
+}
+else{
+	return "What is " + database.getTitle();
+}}]]></xp:this.value>
+						</xp:text>
+						however can use a&#160;
+						<xp:link escape="true" text="CardScan" id="link17"
+							value="http://www.cardscan.com/index.asp" />
+						&#160;device as a scanning device to read the information from a
+						paper&#160;business card and place the information into an
+						electronic
+						form.
+						<xp:br />
+						<xp:br />
+						This saves you a tremendous amount of time for entering&#160;data
+						&#160;and
+						is more failure proof!
+						You can continue talking with your contact (eg on a booth) while
+						registering his contact details.
+						<xp:br />
+						<xp:br />
+						Also often paper business cards are never shared among teams and
+						disappear in a drawer. Potentially a missed opportunity!
+						<xp:br />
+						<xp:br />
+						<xp:text escape="true" id="computedField5">
+							<xp:this.value><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.title !== ""){
+	return "What is " + tmp.title;
+}
+else{
+	return "What is " + database.getTitle();
+}}]]></xp:this.value>
+						</xp:text>
+						&#160;is build on top of Lotus Domino.
+						Organizations that use LD
+						can optimize the
+						benefits of the platform by using this
+						application.&#160;IBM Lotus Domino
+						has&#160;powerfull security
+						features with can be
+						optimized in this application.
+						<xp:br />
+						<xp:br />
+						IBM Lotus Domino also supports offline
+						capability, this means that
+						from the Lotus Notes
+						client you could capture contacts and make
+						them
+						later public by replicating the created
+						documents to an
+						instance of the application on a
+						server.
+						<xp:br />
+						<xp:br />
+					</xp:panel>
+
+
+					<xp:panel styleClass="lotusCaption">
+						Using&#160;
+						<xp:text escape="true" id="computedField8">
+							<xp:this.value><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.title !== ""){
+	return "What is " + tmp.title;
+}
+else{
+	return "What is " + database.getTitle();
+}}]]></xp:this.value>
+						</xp:text>
+					</xp:panel>
+
+					<xp:panel styleClass="FAQContainer">
+						<a name="using">
+							<xp:br />
+						</a>
+						<xp:panel
+							style="font-size:1.3em;font-weight:bold;">
+							How do I capture a contact?
+						</xp:panel>
+						<xp:text escape="true" id="computedField9">
+							<xp:this.value><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.title !== ""){
+	return "What is " + tmp.title;
+}
+else{
+	return "What is " + database.getTitle();
+}}]]></xp:this.value>
+						</xp:text>
+						&#160;basics are simple:
+						<ul>
+							<li>In the administration panel set a registered event as the
+								active event.</li>
+							<li>Open the register form.</li>
+							<li>Place a business card in the CardScan device.</li>
+							<li>Press the 'Scan' button on the screen.</li>
+						</ul>
+						Voila! The information on the card will be placed into the
+						electronic form. You can alter or enter new data before saving the
+						contact.
+						<xp:br />
+						<xp:br />
+					</xp:panel>
+
+
+					<xp:panel
+						style="font-size:1.3em;font-weight:bold;">
+						How do I view the results of an event?
+					</xp:panel>
+					In the administration panel select the contacts tab
+					and select the event you want to see the
+					registered&#160;contacts of.
+					<xp:br />
+					<xp:br />
+					In the presented result list you can open a contact document to
+					read the details.
+				<xp:br></xp:br><xp:br></xp:br></xp:panel>
+
+<xp:panel styleClass="lotusCaption">
+						What's next?
+					</xp:panel>
+<a name="next">
+							<xp:br />
+						</a>
+						<xp:panel
+							style="font-size:1.3em;font-weight:bold;">
+							Extend it!
+						</xp:panel>
+						Some great extension ideas:
+						<ol>
+						<li>Sales Leads - Follow up contacts made on booths.</li>
+						<li>Surveys - What products are your contacts interested in?</li>
+						<li>CRM - Share your business cards with your department.</li>
+						<li>Lottery? - Why not! Winning nice prices attracts everyone!</li>
+						</ol>
+
+
+
+
+			</xp:td>
+
+
+		</xp:tr>
+	</xp:table>
+</xp:view>

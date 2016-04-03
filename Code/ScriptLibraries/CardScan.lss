@@ -1,0 +1,189 @@
+'++LotusScript Development Environment:2:5:(Options):0:74
+Option Public
+
+'++LotusScript Development Environment:2:5:(Forward):0:1
+
+'++LotusScript Development Environment:2:5:(Declarations):0:10
+Declare Function CRTK_Init Lib "cssdk32.dll" ( lphRTK As Long)  As Long
+Declare Function CRTK_Term Lib "cssdk32.dll" ( Byval hRTK As Long)  As Long
+Declare Function CRTK_ScanCheckForCard Lib "cssdk32.dll" ( Byval hRTK As Long)  As Long
+Declare Function CRTK_ScanConfigure Lib "cssdk32.dll" ( Byval hRTK As Long,  Byval hWndOwner As Long)  As Long
+Declare Function CRTK_ScanAcquire Lib "cssdk32.dll" ( Byval hRTK As Long, Byval dwTimeout As Long ) As Long
+Declare Function CRTK_ScanAcquireEx Lib "cssdk32.dll" ( Byval hRTK As Long, Byval dwTimeout As Long, Byval lpfnCallback As Long, Byval lpData As Long ) As Long
+Declare Function CRTK_ScanGetDeviceParam Lib "cssdk32.dll" ( Byval hRTK As Long,  Byval lpszParamName As String,  Byval lpszBuf As String,  lpcbBuf As Long)  As Long
+Declare Function CRTK_ScanSetDeviceParam Lib "cssdk32.dll" ( Byval hRTK As Long, Byval lpszParamName As String, Byval lpszValue As String ) As Long
+Declare Function CRTK_ScanCalibrate Lib "cssdk32.dll" ( Byval hRTK As Long ) As Long
+Declare Function CRTK_ImageSave Lib "cssdk32.dll" ( Byval hRTK As Long, Byval lpszFilename As String ) As Long
+Declare Function CRTK_ImageLoad Lib "cssdk32.dll" ( Byval hRTK As Long, Byval lpszFilename As String ) As Long
+Declare Function CRTK_ImageExport Lib "cssdk32.dll" ( Byval hRTK As Long, Byval lpszFormat As String, Byval lpszFilename As String ) As Long
+Declare Function CRTK_ImageConvert Lib "cssdk32.dll" ( Byval hRTK As Long, Byval lpfnCallback As Long, Byval lpData As Long ) As Long
+Declare Function CRTK_ImageConvertEx Lib "cssdk32.dll" ( Byval hRTK As Long, Byval lpfnCallback As Long, Byval lpData As Long, Byval dwFlags As Long ) As Long
+Declare Function CRTK_ImageDestroy Lib "cssdk32.dll" ( Byval hRTK As Long ) As Long
+Declare Function CRTK_ImageSet Lib "cssdk32.dll" ( Byval hRTK As Long, Byval hDIB As Long ) As Long
+Declare Function CRTK_Recognize Lib "cssdk32.dll" ( Byval hRTK As Long, Byval lpfnCallback As Long, Byval lpData As Long ) As Long
+Declare Function CRTK_RecognizeEx Lib "cssdk32.dll" ( Byval hRTK As Long, Byval lpfnCallback As Long, Byval lpData As Long, Byval dwFlags As Long ) As Long
+Declare Function CRTK_GetText Lib "cssdk32.dll" ( Byval hRTK As Long, Byval lpszFieldName As String, Byval lpszBuf As String, lpcbBuf As Long ) As Long
+Declare Function CRTK_EnumText Lib "cssdk32.dll" ( Byval hRTK As Long, Byval lpszFieldName As String, Byval dwIndex As Long, Byval lpszBuf As String, lpcbBuf As Long, Byval lpszType As String, lpcbType As Long ) As Long
+Declare Function CRTK_EnumOCRText Lib "cssdk32.dll" ( Byval hRTK As Long, Byval dwIndex As Long, Byval lpszBuf As String, lpcbBuf As Long, lpdwLeft As Long, lpdwTop As Long, lpdwRight As Long, lpdwBottom As Long, lpdwFont As Long, lpdwPointSize As Long ) As Long
+Declare Function CRTK_DBCreate Lib "cssdk32.dll" ( Byval hRTK As Long, Byval lpszFilename As String, lphRTKDB As Long ) As Long
+Declare Function CRTK_DBOpen Lib "cssdk32.dll" ( Byval hRTK As Long, Byval lpszFilename As String, Byval lpszPassword As String, lphRTKDB As Long ) As Long
+Declare Function CRTK_DBClose Lib "cssdk32.dll" ( Byval hRTKDB As Long ) As Long
+Declare Function CRTK_DBBeginUpdate Lib "cssdk32.dll" ( Byval hRTKDB As Long ) As Long
+Declare Function CRTK_DBCommitUpdate Lib "cssdk32.dll" ( Byval hRTKDB As Long ) As Long
+Declare Function CRTK_DBCommitUpdateEx Lib "cssdk32.dll" ( Byval hRTKDB As Long, lpdwRevNumber As Long ) As Long
+Declare Function CRTK_DBAbortUpdate Lib "cssdk 32.dll" ( Byval hRTKDB As Long ) As Long
+Declare Function CRTK_DBGetRevisionNumber Lib "cssdk32.dll" ( Byval hRTKDB As Long, lpdwRevNumber As Long ) As Long
+Declare Function CRTK_DBGetGUID Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval lpszBuf As String, lpcbBuf As Long ) As Long
+Declare Function CRTK_DBEnumCategories Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwIndex As Long, Byval lpszBuf As String, lpcbBuf As Long ) As Long
+Declare Function CRTK_DBEnumLabels Lib "cssdk32.lib" ( Byval hRTKDB As Long, Byval lpszFieldName As String, Byval dwIndex As Long, Byval lpszBuf As String, lpcbBuf As Long ) As Long
+Declare Function CRTK_DBEnumChanges Lib "cssdk32.lib" ( Byval hRTKDB As Long, Byval dwStartRevision As Long, Byval dwIndex As Long, lpdwRevision As Long, lpdwID As Long, lpdwChangeType As Long, lpszChangeInfo As String, lpcbChangeInfo As Long ) As Long
+Declare Function CRTK_DBGetNumberOfCards Lib "cssdk32.dll" ( Byval hRTKDB As Long, lpdwCount As Long ) As Long
+Declare Function CRTK_DBGetCard Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwIndex As Long, lpdwID As Long ) As Long
+Declare Function CRTK_DBGetCardByGUID Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval lpszGUID As String, lpdwID As Long ) As Long
+Declare Function CRTK_DBGetValue Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwID As Long, Byval lpszFieldName As String, Byval lpszBuf As String, lpcbBuf As Long ) As Long
+Declare Function CRTK_DBEnumValue Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwID As Long, Byval lpszFieldName As String, Byval dwIndex As Long, Byval lpszBuf As String, lpcbBuf As Long, Byval pszLabel As String, lpcbLabel As Long ) As Long
+Declare Function CRTK_DBPutValue Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwID As Long, Byval lpszFieldName As String, Byval lpszValue As String ) As Long
+Declare Function CRTK_DBGetImage Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwID As Long, lphdib As Long ) As Long
+Declare Function CRTK_DBGetImageEx Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwID As Long, Byval dwIndex As Long, lphdib As Long ) As Long
+Declare Function CRTK_DBPutImage Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwID As Long, Byval dwIndex As Long, Byval hDIB As Long ) As Long
+Declare Function CRTK_DBQueryExists Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwID As Long, lpdwIndex As Long ) As Long
+Declare Function CRTK_DBQueryHasImage Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwID As Long ) As Long
+Declare Function CRTK_DBQueryHasImageEx Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwID As Long, Byval dwIndex As Long ) As Long
+Declare Function CRTK_DBCreateCard Lib "cssdk32.dll" ( Byval hRTKDB As Long, lpdwID As Long, lpdwIndex As Long ) As Long
+Declare Function CRTK_DBCreateCardEx Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval lpszGUID As String, lpdwID As Long, lpdwIndex As Long ) As Long
+Declare Function CRTK_DBDeleteCard Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwID As Long ) As Long
+Declare Function CRTK_DBGetNumberOfCategories Lib "cssdk32.dll" ( Byval hRTKDB As Long, lpdwCount As Long ) As Long
+Declare Function CRTK_DBGetCategory Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwIndex As Long, lpdwID As Long ) As Long
+Declare Function CRTK_DBGetCategoryName Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwID As Long, Byval lpszBuf As String, lpcbBuf As Long ) As Long
+Declare Function CRTK_DBGetCategoryGUID Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwID As Long, Byval lpszBuf As String, lpcbBuf As Long ) As Long
+Declare Function CRTK_DBSetCategoryGUID Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwID As Long, Byval lpszGUID As String ) As Long
+Declare Function CRTK_DBGetCategoryByName Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval lpszName As String, lpdwID As Long ) As Long
+Declare Function CRTK_DBGetCategoryByGUID Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval lpszGUID As String, lpdwID As Long ) As Long
+Declare Function CRTK_DBCreateCategory Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval lpszName As String, Byval lpszGUID As String, lpdwID As Long, lpdwIndex As Long ) As Long
+Declare Function CRTK_DBDeleteCategory Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwID As Long ) As Long
+Declare Function CRTK_DBRenameCategory Lib "cssdk32.dll" ( Byval hRTKDB As Long, Byval dwID As Long, Byval lpszName As String ) As Long
+Declare Function CRTK_GetVersion Lib "cssdk32.dll" ( lpdwMajor As Long, lpdwMinor As Long ) As Long
+Declare Function CRTK_GetErrorMessage Lib "cssdk32.dll" ( Byval dwErrorCode As Long, Byval lpszMsg As String, lpcbMsg As Long, lpszRemedy As String, lpcbRemedy As Long ) As Long
+%REM
+	Library Preferences
+	Created Nov 2, 2010 by Patrick Kwinten
+	Description: Comments for Agent
+%END REM
+Const VB_Name = "SDK_API_Declarations"
+Const CRTK_API_MAJOR_VERSION = 1
+Const CRTK_API_MINOR_VERSION = 5
+Const CRTK_MAX_FORMAT_NAME = 64
+Const CRTK_MAX_FIELD_NAME = 64
+Const CRTK_MAX_PARAM_NAME = 64
+Const CRTK_PARAM_SCANNER_MODEL = "Model"
+Const CRTK_PARAM_SERIAL_NUMBER = "Serial Number"
+Const CRTK_PARAM_FIRMWARE_VERSION = "Firmware Version"
+Const CRTK_PARAM_CARD_PLACEMENT = "Card Placement"
+Const CRTK_VALUE_CARD_PLACEMENT_FACEUP = "Face Up"
+Const CRTK_VALUE_CARD_PLACEMENT_FACEDOWN = "Face Down"
+Const CRTK_PARAM_PORT_TYPE = "Port Type"
+Const CRTK_VALUE_PORT_TYPE_USB = "USB"
+Const CRTK_VALUE_PORT_TYPE_LPT = "LPT"
+Const CRTK_PARAM_PORT_NUMBER = "Port Number"
+Const CRTK_VALUE_PORT_NUMBER_LPT1 = "0"   
+Const CRTK_VALUE_PORT_NUMBER_LPT2 = "1"
+Const CRTK_PARAM_CALIBRATED = "Calibrated"
+Const CRTK_VALUE_CALIBRATED_TRUE = "1"
+Const CRTK_VALUE_CALIBRATED_FALSE = "0"
+Const CRTK_PARAM_COLOR_MODE = "Color Mode"
+Const CRTK_VALUE_COLOR_MODE_COLOR = "COLOR"
+Const CRTK_VALUE_COLOR_MODE_MONOCHROME = "MONOCHROME"
+Const CRTK_FORMAT_BMP = "BMP"
+Const CRTK_RECOGNIZE_RAW_TEXT = 1
+Const CRTK_RECOGNIZE_NO_ROTATE = 2
+Const CRTK_CONVERT_NO_ROTATE = 1
+Const CRTK_CHANGE_NULL = 0
+Const CRTK_CHANGE_MODIFY = 1
+Const CRTK_CHANGE_ADD = 2
+Const CRTK_CHANGE_DELETE = 3
+Const CRTK_FIELD_NAME = "Name"
+Const CRTK_FIELD_NAME_PREFIX = "Name Prefix"
+Const CRTK_FIELD_FIRST_NAME = "First Name"
+Const CRTK_FIELD_MIDDLE_NAME = "Middle Name"
+Const CRTK_FIELD_LAST_NAME = "Last Name"
+Const CRTK_FIELD_NAME_SUFFIX = "Name Suffix"
+Const CRTK_FIELD_TITLE = "Title"
+Const CRTK_FIELD_COMPANY = "Company"
+Const CRTK_FIELD_ADDRESS = "Address"
+Const CRTK_FIELD_STREET = "Street Address"
+Const CRTK_FIELD_ADDR1 = "Address Line 1"
+Const CRTK_FIELD_ADDR2 = "Address Line 2"
+Const CRTK_FIELD_ADDR3 = "Address Line 3"
+Const CRTK_FIELD_CITY = "City"
+Const CRTK_FIELD_STATE = "State"
+Const CRTK_FIELD_POSTAL_CODE = "Postal Code"
+Const CRTK_FIELD_COUNTRY = "Country"
+Const CRTK_FIELD_2ND_ADDRESS = "2nd Address"
+Const CRTK_FIELD_2ND_STREET = "2nd Street Address"
+Const CRTK_FIELD_2ND_ADDR1 = "2nd Address Line 1"
+Const CRTK_FIELD_2ND_ADDR2 = "2nd Address Line 2"
+Const CRTK_FIELD_2ND_ADDR3 = "2nd Address Line 3"
+Const CRTK_FIELD_2ND_CITY = "2nd City"
+Const CRTK_FIELD_2ND_STATE = "2nd State"
+Const CRTK_FIELD_2ND_POSTAL_CODE = "2nd Postal Code"
+Const CRTK_FIELD_2ND_COUNTRY = "2nd Country"
+Const CRTK_FIELD_PHONE = "Phone"
+Const CRTK_FIELD_FAX = "Fax"
+Const CRTK_FIELD_EMAIL = "E-mail"
+Const CRTK_FIELD_WEB_SITE = "Web site"
+Const CRTK_FIELD_OTHER = "Other"
+Const CRTK_PHONE_HOME = "Home"
+Const CRTK_PHONE_DIRECT = "Direct"
+Const CRTK_PHONE_MOBILE = "Mobile"
+Const CRTK_PHONE_OTHER = "Other Phone"
+Const CRTK_PHONE_VOICEMAIL = "Voice Mail"
+Const CRTK_PHONE_OTHER_FAX = "Other Fax"
+Const CRTK_EMAIL_AOL = "AOL"
+Const CRTK_EMAIL_APPLELINK = "Applelink"
+Const CRTK_EMAIL_COMPUSERVE = "Compuserve"
+Const CRTK_EMAIL_OTHER = "Other E-mail"
+Const CRTK_EMAIL_MCIMAIL = "MCI Mail"
+Const CRTK_FIELD_PHONE_1 = "Phone_1"
+Const CRTK_FIELD_PHONE_2 = "Phone_2"
+Const CRTK_FIELD_PHONE_3 = "Phone_3"
+Const CRTK_FIELD_PHONE_4 = "Phone_4"
+Const CRTK_FIELD_PHONE_5 = "Phone_5"
+Const CRTK_FIELD_PHONE_6 = "Phone_6"
+Const CRTK_FIELD_PHONE_1_LABEL = "Phone_1.Label"
+Const CRTK_FIELD_PHONE_2_LABEL = "Phone_2.Label"
+Const CRTK_FIELD_PHONE_3_LABEL = "Phone_3.Label"
+Const CRTK_FIELD_PHONE_4_LABEL = "Phone_4.Label"
+Const CRTK_FIELD_PHONE_5_LABEL = "Phone_5.Label"
+Const CRTK_FIELD_PHONE_6_LABEL = "Phone_6.Label"
+Const CRTK_FIELD_EMAIL_1 = "Email_1"
+Const CRTK_FIELD_EMAIL_2 = "Email_2"
+Const CRTK_FIELD_EMAIL_3 = "Email_3"
+Const CRTK_FIELD_EMAIL_4 = "Email_4"
+Const CRTK_FIELD_EMAIL_5 = "Email_5"
+Const CRTK_FIELD_EMAIL_6 = "Email_6"
+Const CRTK_FIELD_EMAIL_1_LABEL = "Email_1.Label"
+Const CRTK_FIELD_EMAIL_2_LABEL = "Email_2.Label"
+Const CRTK_FIELD_EMAIL_3_LABEL = "Email_3.Label"
+Const CRTK_FIELD_EMAIL_4_LABEL = "Email_4.Label"
+Const CRTK_FIELD_EMAIL_5_LABEL = "Email_5.Label"
+Const CRTK_FIELD_EMAIL_6_LABEL = "Email_6.Label"
+Const CRTK_SUCCESS = 1
+Const CRTK_YES = 2
+Const CRTK_NO = 3
+Const CRTK_NO_MORE_ITEMS = 4
+Const CRTK_NO_TEXT = 5
+Const CRTK_NOT_FOUND = 6
+Const CRTK_ERR_BAD_HANDLE = -2
+Const CRTK_ERR_NO_IMAGE = -3
+Const CRTK_ERR_BAD_FORMAT = -4
+Const CRTK_ERR_EXPIRED = -5
+Const CRTK_ERR_BAD_ARGUMENT = -6
+Const CRTK_ERR_BAD_POINTER = -7
+Const CRTK_ERR_INVALID_HWND = -8
+Const CRTK_ERR_CANCELED = -9	
+Const CRTK_ERR_BAD_PASSWORD = -10
+Const CRTK_ERR_OLD_FILE = -11
+Const CRTK_ERR_BUFFER_TOO_SMALL = -12
+Const CRTK_ERR_READ_ONLY_PARAM = -13
+Const CRTK_ERR_NOT_IMPLEMENTED = -1009
+Const CRTK_ERR_USER_CANCELED = -1012

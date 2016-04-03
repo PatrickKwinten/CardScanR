@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+
+	
+	
+	
+	<xe:widgetContainer id="widgetContainer1">
+		<xe:this.titleBarText><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return "No event selected";
+}
+else {
+	var v:NotesView = database.getView("$v-eventsbyID");
+	var doc:NotesDocument = v.getDocumentByKey(eventID);
+	if (doc != null) {
+		return "Event: " + doc.getItemValueString("Tx_Name");
+	}
+	else{
+		return "No Event selected.";
+	}
+}}]]></xe:this.titleBarText>
+		<xp:panel tagName="div" styleClass="lotusMeta">
+			<xp:text escape="true" id="eventDate">
+				<xp:this.value><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return "No event selected";
+}
+else {
+	var v:NotesView = database.getView("$v-eventsbyID");
+	var doc:NotesDocument = v.getDocumentByKey(eventID);
+	if (doc != null) {
+		return doc.getItemValue("Dt_Date")[0];
+	}
+	else{
+		return "No date available.";
+	}
+}}]]></xp:this.value>
+			</xp:text>
+		</xp:panel>
+		<xp:panel tagName="div" styleClass="lotusMeta">
+			<xp:text escape="true" id="eventDetails">
+				<xp:this.value><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return "No event selected";
+}
+else {
+	var v:NotesView = database.getView("$v-eventsbyID");
+	var doc:NotesDocument = v.getDocumentByKey(eventID);
+	if (doc != null) {
+		return doc.getItemValueString("Tx_Location");
+	}
+	else{
+		return "No location available.";
+	}
+}}]]></xp:this.value>
+			</xp:text>
+		</xp:panel>
+
+
+		<xp:panel style="margin:10px 0 0 0; font-size:0.9em;">
+			<xp:link escape="true" text="Set Event..." id="link1"
+				value="/admin.xsp"
+				title="Set an active Event for this session... ">
+				<xp:this.rendered><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID != "" ){
+	return false;
+}
+else {
+	var roles = context.getUser().getRoles();
+	if(roles.contains("[admin]")& view.getPageName() != "/admin.xsp"){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+
+}]]></xp:this.rendered>
+			</xp:link>
+			<xp:link escape="true" text="Switch Event" id="link2"
+				value="/admin.xsp">
+				<xp:this.rendered><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID == ""|| eventID == null){
+	return false;
+}
+else {
+	var roles = context.getUser().getRoles();
+	if(roles.contains("[admin]")& view.getPageName() != "/admin.xsp"){
+		return true;
+	}
+	else{
+		return false;
+	}
+}}]]></xp:this.rendered>
+			</xp:link>
+		</xp:panel></xe:widgetContainer></xp:view>

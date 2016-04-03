@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:panel styleClass="lotusErrorBox">
+		<xp:panel styleClass="lotusErrorContent">
+			<xp:image url="ok.png" id="image1"></xp:image>
+			<xp:panel styleClass="lotusErrorForm">
+			<xp:text escape="true" id="computedField1" tagName="h1"
+				style="margin-bottom:10px;">
+				<xp:this.value><![CDATA[#{javascript:return "Thank You"}]]></xp:this.value>
+			</xp:text>
+			
+			<xp:inputTextarea id="inputTextarea1">
+				<xp:this.value><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigThankYou");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+return fields}]]></xp:this.value>
+			</xp:inputTextarea>
+			<xp:panel styleClass="lotusBtnContainer">
+				<xp:button value="Capture new contact" id="button1"
+					styleClass="lotusBtn lotusBtnSpecial">
+				<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+					<xp:this.action>
+						<xp:openPage name="/scan.xsp"></xp:openPage>
+					</xp:this.action></xp:eventHandler></xp:button></xp:panel></xp:panel></xp:panel>
+		</xp:panel></xp:view>

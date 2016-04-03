@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><imageresource designerversion="8.5.2" maintenanceversion="1.5" name="xpSidebar.gif" noreplace="true" publicaccess="false" replicaid="C12579FA00396CD6" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="256" sequence="15" unid="C7AEE880740E2C76C125771C003FE74F">
+<created><datetime dst="true">20100507T133759,83+02</datetime></created>
+<modified><datetime dst="true">20160401T145157,51+02</datetime></modified>
+<revised><datetime dst="true">20160401T145157,50+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160401T145157,51+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20120510T122715,92+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Information Systems/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+
+<item name="$MimeType" sign="true"><text>image/gif</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20100507T133746,05+02</datetime></item>
+<item name="$$ScriptName" sign="true" summary="false"><text>xpSidebar.gif</text></item></imageresource>

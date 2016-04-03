@@ -1,0 +1,38 @@
+<theme extends="oneuiv2.1_green" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd" >
+	
+	<!-- load dojo claro -->
+	
+	<resource dojoTheme="true">
+		<content-type>text/css</content-type>
+		<href>/.ibmxspres/dojoroot/dijit/themes/claro/claro.css</href>
+	</resource>
+	
+		<!--  oneui adaptation -->
+	<resource dojoTheme="true">
+		<content-type>text/css</content-type>
+		<href>oneUI-adaptation.css</href>
+	</resource>
+	
+	<!-- set page to use dojo claro theme -->
+	<control>
+		<name>ViewRoot</name>
+		<property>
+			<name>styleClass</name>
+			<value>xsp lotusui lotusSpritesOn claro</value>
+		</property>
+		<property>
+			<name>pageIcon</name>
+			<value>/favicon.ico</value>
+		</property>
+	</control>
+
+	<!-- add lotusForm to form tag -->
+	<control>
+		<name>Form</name>
+		<property>
+			<name>styleClass</name>
+			<value>lotusForm</value> 
+		</property>
+	</control>
+
+</theme>

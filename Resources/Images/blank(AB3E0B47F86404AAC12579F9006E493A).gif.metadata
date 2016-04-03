@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><imageresource designerversion="8.5.3" maintenanceversion="1.5" name="blank.gif" publicaccess="false" replicaid="C12579FA00396CD6" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="276" sequence="4" unid="AB3E0B47F86404AAC12579F9006E493A">
+<created><datetime dst="true">20120509T220437,06+02</datetime></created>
+<modified><datetime dst="true">20160401T145156,19+02</datetime></modified>
+<revised><datetime dst="true">20160401T145156,18+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160401T145156,19+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20120510T122716,08+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+
+<item name="$MimeType" sign="true"><text>image/gif</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20120509T220423,32+02</datetime></item></imageresource>

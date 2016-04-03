@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='(GLOBAL: Preferences)' alias='$v-preferences' xmlns='http://www.lotus.com/dxl'
+ version='9.0' maintenanceversion='1.5' replicaid='C12579FA00396CD6' showinmenu='false'
+ publicaccess='false' designerversion='8.5.2' unreadmarks='none' onopengoto='top'
+ onrefresh='refreshtop' headers='flat' opencollapsed='true' showresponsehierarchy='false'
+ showmargin='true' shrinkrows='true' extendlastcolumn='true' showhierarchies='false'
+ unreadcolor='black' rowlinecount='9' headerlinecount='1' rowspacing='1.25'
+ bgcolor='white' totalscolor='blue' headerbgcolor='#efefef' boldunreadrows='true'
+ evaluateactions='false' allownewdocuments='false' allowcustomizations='true'
+ hidemarginborder='false' marginwidth='0px 0px 1px' marginbgcolor='white'
+ gridstyle='solid' gridcolor='#efefef' uniquekeys='false' formatnoteid='5DDD69F099326CAFC12576EF003833D3'>
+<noteinfo noteid='1ce' unid='577558B1EBE834B9C12577CF00334BDE' sequence='22'>
+<created><datetime>20101102T102017,58+01</datetime></created>
+<modified><datetime dst='true'>20160403T191943,83+02</datetime></modified>
+<revised><datetime dst='true'>20160403T191943,82+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20160403T191943,83+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20120510T122715,26+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name
+>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+<globals><code event='options'><lotusscript>Option Public
+Option Declare
+
+</lotusscript></code></globals><code event='selection'><formula>SELECT ((Form = "(GLOBAL: Preferences)") | (Form = "$f-preferences"))</formula></code><code
+ event='querypaste'><lotusscript>Sub Querypaste(Source As Notesuiview, Continue As Variant)
+	continue = False
+End Sub</lotusscript></code>
+<actionbar useappletinbrowser='true' bgcolor='#b1b1d2' bordercolor='gray'><actionbarstyle
+ height='4.7500ex' repeat='hrepeat'><font size='9pt' name='multilingual'/><imageref
+ name='actionbarbg.gif'/></actionbarstyle>
+<actionbuttonstyle margintype='fixed' margin='5' showdropdown='true' bgcolor='none'><imageref
+ name='actionbarmouseover.gif'/></actionbuttonstyle><font size='9pt' name='multilingual'
+ color='#004080'/><border style='solid' width='0px 0px 2px' color='gray'/>
+<action title='Categori_ze' showinbar='false' systemcommand='categorize'/>
+<action title='_Edit Document' showinbar='false' systemcommand='edit'/>
+<action title='Send Docu_ment' showinbar='false' systemcommand='send'/>
+<action title='_Forward' showinbar='false' systemcommand='forward'/>
+<action title='_Move To Folder...' showinbar='false' systemcommand='movetofolder'/>
+<action title='_Remove From Folder' showinbar='false' systemcommand='removefromfolder'/></actionbar>
+<column sort='descending' hidedetailrows='false' itemname='$23' width='11'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='false' sortnocase='true'
+ showaslinks='false'><font size='9pt' color='#4f4f4f'/><columnheader title='Modified'><font
+ size='9pt' name='multilingual'/></columnheader><datetimeformat show='datetime'
+ date='yearmonthday' fourdigityearfor21stcentury='true' time='hourminute'
+ zone='never' dateformat='yearmonthdayweekday' dayformat='twodigitday' monthformat='twodigitmonth'
+ yearformat='fourdigityear' weekdayformat='shortname' dateseparator1='-' dateseparator2='-'
+ dateseparator3=' ' timeseparator=':' timeformat24='true' preference='usersetting'/><numberformat
+ format='general' punctuated='false' parens='false' percent='false' bytes='false'/><code
+ event='value'><formula>@Modified</formula></code></column>
+<item name='$SelQuery' sign='true'>
+<rawitemdata type='f'>
+gQYAAAAAif8wAAAAAAABACQAKEdMT0JBTDogUHJlZmVyZW5jZXMpfCRmLXByZWZlcmVuY2Vz
+</rawitemdata></item></view>
+

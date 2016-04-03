@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="$f-event"></xp:dominoDocument>
+	</xp:this.data>
+
+	<xe:formTable id="formTable1" formTitle="Event"
+		formDescription="Provide all details..." labelPosition="above"
+		disableRowError="true">
+		<xp:this.facets>
+
+			<xp:panel xp:key="footer">
+				<xp:button value="Save" id="button1"
+					styleClass="lotusBtn lotusBtnSpecial">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+
+							<xp:actionGroup>
+								<xp:saveDocument></xp:saveDocument>
+								<xp:openPage name="/admin.xsp"></xp:openPage>
+							</xp:actionGroup>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:link escape="true" text="Cancel" id="link1" value="/admin.xsp">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<xp:openPage name="/admin.xsp"></xp:openPage>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:link>
+			</xp:panel>
+		</xp:this.facets>
+		<xe:formRow id="formRow1" label="Name:" for="tx_Name1">
+			<xp:inputText value="#{document1.Tx_Name}" id="tx_Name1"
+				styleClass="lotusText" required="true">
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A name is required...">
+					</xp:validateRequired>
+				</xp:this.validators>
+			</xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow2" label="Date:" for="Dt_Date">
+			<xe:djDateTextBox id="Dt_Date" value="#{document1.Dt_Date}"
+				defaultValue="${javascript:@Today()}">
+				<xe:this.validators>
+					<xp:validateRequired
+						message="A date is required...">
+					</xp:validateRequired>
+				</xe:this.validators>
+				<xp:this.converter>
+					<xp:convertDateTime type="date" dateStyle="short"></xp:convertDateTime>
+				</xp:this.converter>
+			</xe:djDateTextBox>
+		</xe:formRow>
+		<xe:formRow id="formRow3" label="Location:"
+			for="tx_Location1">
+			<xp:inputText value="#{document1.Tx_Location}"
+				id="tx_Location1" styleClass="lotusText" required="true">
+				<xp:this.validators>
+					<xp:validateRequired
+						message="A location is required...">
+					</xp:validateRequired>
+				</xp:this.validators>
+			</xp:inputText>
+		</xe:formRow>
+	</xe:formTable>
+	
+</xp:view>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"><xp:panel styleClass="lotusInfoBox">
+		<xp:panel><h3><span class="lotusLeft">Tips</span></h3></xp:panel>
+		Complete the form as much as possible. Information entered initially will bring value&#160;later.
+		<xp:panel><h3><span class="lotusLeft">Name</span></h3></xp:panel>
+		Descriptive name for the event.<xp:panel><h3><span class="lotusLeft">Date</span></h3></xp:panel>
+		Date the event will take place<xp:panel><h3><span class="lotusLeft">Location</span></h3></xp:panel>
+		Place of the event (City, Country)</xp:panel>
+
+</xp:view>

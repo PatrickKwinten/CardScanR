@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<div id="contentArea" class="lotusLimit">
+		<div class="lotusHeader">
+			<h1>
+				Place Holder for Main Content Pane
+			</h1>
+		</div>
+	</div>	
+</xp:view>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+
+	<xp:this.resources>
+		<xp:script src="/initLayout.jss" clientSide="false"></xp:script>
+
+
+
+	</xp:this.resources>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<xp:this.beforePageLoad><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if(tmp === null | tmp === ""){
+	initLayout.setInitScope();
+}}]]></xp:this.beforePageLoad>
+
+	<xp:this.beforeRenderResponse><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if(context.getSessionProperty("xsp.theme") != tmp.theme){
+	context.setSessionProperty("xsp.theme",tmp.theme);
+	context.redirectToHome();
+}}]]></xp:this.beforeRenderResponse>
+	<xe:applicationLayout id="applicationLayout1">
+		<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
+		<xp:this.facets>
+			<xp:callback facetName="facetLeft" id="facetLeft"
+				xp:key="LeftColumn">
+			</xp:callback>
+			<xp:callback facetName="facetRight" id="facetRight"
+				xp:key="RightColumn">
+			</xp:callback>
+		</xp:this.facets>
+
+
+		<xe:this.configuration>
+			<xe:oneuiApplication>
+				<xe:this.footerLinks>
+					<xe:basicContainerNode label="Container 1">
+
+						<xe:this.children>
+							<xe:basicLeafNode label="OpenNTF"
+								href="http://www.openntf.org">
+							</xe:basicLeafNode>
+							<xe:basicLeafNode
+								label="CardScanR Project">
+								<xe:this.href><![CDATA[http://www.openntf.org/internal/home.nsf/project.xsp?action=openDocument&name=CardScanR]]></xe:this.href>
+							</xe:basicLeafNode>
+							<xe:basicLeafNode label=" Donate"
+								image="/paypal.jpg">
+								<xe:this.href><![CDATA[https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LXNY8ZR34G8MS]]></xe:this.href>
+							</xe:basicLeafNode>
+
+						</xe:this.children>
+					</xe:basicContainerNode>
+
+
+
+				</xe:this.footerLinks>
+				<xe:this.bannerUtilityLinks>
+					<xe:loginTreeNode>
+
+					</xe:loginTreeNode>
+					<xe:pageTreeNode label="Configuration"
+						page="/admin.xsp">
+						<xe:this.rendered><![CDATA[#{javascript:var roles = context.getUser().getRoles();
+if(roles.contains("[admin]")& view.getPageName() != "/admin.xsp"){
+	return true;
+}
+else{
+	return false;
+}
+}]]></xe:this.rendered>
+					</xe:pageTreeNode>
+					<xe:userTreeNode>
+						<xe:this.label><![CDATA[#{javascript:var uName:NotesName = session.createName(@UserName());
+return ("Logged in as " + uName.getCommon());}]]></xe:this.label>
+						<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon() != "Anonymous"){
+ return true;
+}}]]></xe:this.rendered>
+					</xe:userTreeNode>
+
+					<xe:basicLeafNode label="Logout">
+						<xe:this.href><![CDATA[#{javascript:href = facesContext.getExternalContext().getRequest().getContextPath() + "?Logout&redirectTo=" + facesContext.getExternalContext().getRequest().getContextPath()}]]></xe:this.href>
+						<xe:this.rendered><![CDATA[#{javascript:var userName:NotesName = session.createName(@UserName());
+if (userName.getCommon() != "Anonymous"){
+ return true;
+}}]]></xe:this.rendered>
+					</xe:basicLeafNode>
+					<xe:basicLeafNode label="  Donate"
+						image="/paypal.jpg">
+						<xe:this.href><![CDATA[https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LXNY8ZR34G8MS]]></xe:this.href>
+					</xe:basicLeafNode>
+				</xe:this.bannerUtilityLinks>
+
+
+				<xe:this.productLogo><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.logo ==="No Logo"){
+	return "blank.gif";
+}
+else{
+	return tmp.logo;
+}}]]></xe:this.productLogo>
+
+				<xe:this.titleBarName><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+return tmp.title;}]]></xe:this.titleBarName>
+				<xe:this.legalText><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.legaltext === ""){
+	return "";
+}
+else{
+	return tmp.legaltext;
+}}]]></xe:this.legalText>
+
+
+				<xe:this.searchBar>
+					<xe:appSearchBar pageName="/search.xsp"
+						queryParam="key">
+						<xe:this.rendered><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if(tmp.search === "0"){
+	return false;
+}else{
+	return true;
+}
+	}]]></xe:this.rendered>
+					</xe:appSearchBar>
+				</xe:this.searchBar>
+
+				<xe:this.placeBarName><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+tmp.placebartext;}]]></xe:this.placeBarName>
+				<xe:this.legal><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.legal === ""){
+	return false;
+}
+else{
+	return true;
+}}]]></xe:this.legal>
+				<xe:this.footer><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.footer === "1"){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.footer>
+				<xe:this.titleBarTabs>
+					<xe:pageTreeNode label="Home" page="/default.xsp">
+					</xe:pageTreeNode>
+					<xe:pageTreeNode label="Capture Card"
+						page="/scan.xsp">
+					</xe:pageTreeNode>
+
+
+					<xe:pageTreeNode label="About This App"
+						page="/about.xsp">
+					</xe:pageTreeNode>
+
+				</xe:this.titleBarTabs>
+			</xe:oneuiApplication>
+		</xe:this.configuration>
+	</xe:applicationLayout>
+
+	</xp:view>

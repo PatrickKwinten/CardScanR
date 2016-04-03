@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.beforePageLoad><![CDATA[#{javascript:sessionScope.put("tmpInputMissing","")}]]></xp:this.beforePageLoad>
+
+	
+	<xp:panel><xp:this.rendered><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID == ""|| eventID == null){
+	return false;
+}
+else {
+	return true;
+}}]]></xp:this.rendered>
+
+	<xp:button value="Scan..." id="button3"
+		styleClass="lotusBtn lotusBtnDisabled"
+		title="No event activated. Run administration first.">
+		
+		<xp:this.rendered><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.rendered><xp:eventHandler event="onclick" submit="true"
+			refreshMode="partial" refreshId="tableContactDetails">
+		</xp:eventHandler>
+	</xp:button>
+	<xp:button value="Scan Card" id="button2" styleClass="lotusBtn lotusBtnSpecial">
+		<xp:this.rendered><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID ==""|| eventID ==null){
+	return false;
+}
+else{
+	return true;
+}}]]></xp:this.rendered><xp:eventHandler event="onclick" submit="true" refreshMode="partial" refreshId="tableContactDetails">
+			<xp:this.action><![CDATA[#{javascript:var agentName:String = "(CardScanInitialize)";
+
+//create In Memory Document
+var doc = database.createDocument();
+
+var outputLastname = getComponent("inputLastname");
+var outputFirstname = getComponent("inputFirstname");
+var outputPrefix = getComponent("inputPrefix");
+var outputTitle = getComponent("inputTitle");
+
+var outputSuffix = getComponent("inputSuffix");
+var outputMiddlename = getComponent("inputMiddlename");
+var outputName = getComponent("inputName");
+
+var outputCompany = getComponent("inputCompany");
+var outputAddress = getComponent("inputAddress");
+var outputStreet = getComponent("inputStreet");
+
+var outputAddr1 = getComponent("inputAddr1");
+var outputAddr2 = getComponent("inputAddr2");
+var outputAddr3 = getComponent("inputAddr3");
+
+var outputCity = getComponent("inputCity");
+var outputState = getComponent("inputState");
+var outputPostalCode = getComponent("inputPostalCode");
+var outputCountry = getComponent("inputCountry");
+
+var outputTelephone = getComponent("inputTelephone");
+var outputFax = getComponent("inputFax");
+var outputEmail = getComponent("inputEmail");
+var outputWebsite = getComponent("inputWebsite");
+var outputOther = getComponent("inputOther");
+
+
+var agent:NotesAgent = database.getAgent(agentName);
+
+if (agent != null) {
+
+agent.runWithDocumentContext(doc);
+
+outputLastname.setValue(doc.getItemValueString("Tx_Lastname"));
+outputFirstname.setValue(doc.getItemValueString("Tx_Firstname"));
+outputPrefix.setValue(doc.getItemValueString("Tx_Prefix"));
+outputTitle.setValue(doc.getItemValueString("Tx_Title"));
+
+outputSuffix.setValue(doc.getItemValueString("Tx_Suffix"));
+outputMiddlename.setValue(doc.getItemValueString("Tx_Middlename"));
+outputName.setValue(doc.getItemValueString("Tx_Name"));
+
+outputCompany.setValue(doc.getItemValueString("Tx_Company"));
+outputAddress.setValue(doc.getItemValueString("Tx_Address"));
+outputStreet.setValue(doc.getItemValueString("Tx_Street"));
+
+outputAddr1.setValue(doc.getItemValueString("Tx_Addr1"));
+outputAddr2.setValue(doc.getItemValueString("Tx_Addr2"));
+outputAddr3.setValue(doc.getItemValueString("Tx_Addr3"));
+
+outputCity.setValue(doc.getItemValueString("Tx_City"));
+outputState.setValue(doc.getItemValueString("Tx_State"));
+outputPostalCode.setValue(doc.getItemValueString("Tx_PostalCode"));
+outputCountry.setValue(doc.getItemValueString("Tx_Country"));
+
+outputTelephone.setValue(doc.getItemValueString("Tx_Telephone"));
+outputFax.setValue(doc.getItemValueString("Tx_Fax"));
+outputEmail.setValue(doc.getItemValueString("Tx_Email"));
+outputWebsite.setValue(doc.getItemValueString("Tx_Website"));
+outputOther.setValue(doc.getItemValueString("Tx_Other"));
+
+doc.recycle();
+} else {
+compOut.setValue("Can not find CardScan Agent");
+}
+}]]></xp:this.action>
+		</xp:eventHandler>
+	</xp:button>
+	
+<xp:button value="Submit" id="button4"><xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="false" save="true"></xp:eventHandler></xp:button>
+	<xp:link escape="true" text="Cancel" id="link1"
+		styleClass="lotusAction">
+	<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+		<xp:this.action>
+			<xp:openPage name="/default.xsp"></xp:openPage>
+		</xp:this.action></xp:eventHandler></xp:link>
+</xp:panel>
+	<xp:panel>No event is selected. <xp:br></xp:br><xp:br></xp:br><xp:span style="font-weight:bold">Administrator:</xp:span> Make sure an event is set active in the administration panel.<xp:this.rendered><![CDATA[#{javascript:var eventID = sessionScope.get("tmpEventID");
+if (eventID == ""|| eventID == null){
+	return true;
+}
+else {
+	return false;
+}}]]></xp:this.rendered></xp:panel></xp:view>

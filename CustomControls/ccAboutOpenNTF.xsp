@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+<xe:widgetContainer id="widgetContainer3" titleBarText="Donate">
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick"></input>
+<input type="hidden" name="hosted_button_id" value="RMJ3ZTKP2JUG6"></input>
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"></input>
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></img>
+</form>
+			</xe:widgetContainer>
+	<xe:widgetContainer id="widgetContainer1" titleBarText="OpenNTF"
+		scrollable="false">
+
+		<xe:this.dropDownNodes>
+			<xe:basicLeafNode href="http://www.openntf.org"
+				label="Visit OpenNTF" />
+
+			<xe:basicLeafNode label="Visit Project on OpenNTF">
+				<xe:this.href><![CDATA[http://www.openntf.org/internal/home.nsf/project.xsp?action=openDocument&name=Bildr]]></xe:this.href>
+			</xe:basicLeafNode>
+		</xe:this.dropDownNodes>
+
+		<xp:panel>
+			<ol class="faqbullets">
+				<li>
+					<xp:link escape="true" text="What is CardScanR?"
+						id="link5" value="#whatis" />
+
+				</li>
+				<li>
+					<xp:link escape="true" text="What is OpenNTF?"
+						id="link3" value="#openntf" />
+
+				</li>
+
+				<li>
+					<xp:link escape="true" text="How can I contribute?"
+						id="link6" value="#contribute" />
+
+
+				</li>
+
+			</ol>
+		</xp:panel>
+
+		<xp:panel>
+			<a name="whatis" />
+			<xp:panel tagName="div"
+				style="font-weight:bold;margin:0 0 5px 0;">
+				What is CardScanR
+			</xp:panel>
+			<xp:panel>
+				CardScanR is a Contact Management application build on
+				IBM Lotus Domino using XPages.
+				<xp:br />
+				<xp:br />
+				CardScanR was originally developed by&#160;
+				<a href="http://quintessens.wordpress.com/"
+					target="_blank">
+					Patrick Kwinten
+				</a>
+
+				<xp:br />
+				<xp:br />
+				For more information about the project or to download
+				the latest release visit the&#160;
+				<xp:link escape="true" text="project page" id="link2">
+					<xp:this.value><![CDATA[http://www.openntf.org/internal/home.nsf/project.xsp?action=openDocument&name=CardScanR]]></xp:this.value>
+				</xp:link>
+				&#160;on OpenNTF.
+			</xp:panel>
+		</xp:panel>
+		<xp:panel style="margin:10px 0 0 0;">
+			<a name="openntf" />
+			<xp:panel style="font-weight:bold;margin:0 0 5px 0;">
+				What is OpenNTF?
+			</xp:panel>
+
+			OpenNTF is a community devoted to enabling groups of
+			individuals all over the world to collaborate on IBM Lotus
+			Notes/Domino applications and release them as open source.
+			<xp:br />
+			<xp:br />
+			Visit the&#160;
+			<xp:link escape="true" text="OpenNTF" id="link1"
+				value="http://www.openntf.org" />
+			&#160;website&#160;to read more this community&#160;and find
+			interesting projects to download.
+		</xp:panel>
+
+
+
+		<xp:panel style="margin:10px 0 0 0;">
+			<a name="contribute"></a>
+			<xp:panel style="font-weight:bold;margin:0 0 5px 0;">
+				How can I contribute?
+			</xp:panel>
+			You can contribute on the positive side
+			(idea's,&#160;suggestions for improvement) and the negative
+			side&#160;(errors, bugs) of CardScanR.
+			<xp:br />
+			<xp:br />
+			Please use the&#160;<xp:link escape="true" text="project page" id="link4">
+					<xp:this.value><![CDATA[http://www.openntf.org/internal/home.nsf/project.xsp?action=openDocument&name=CardScanR]]></xp:this.value>
+				</xp:link>&#160;on OpenNTF to do this.
+			<xp:br />
+			<xp:br />
+			We will also post 'help wanted' posts here to ask assistance
+			to improve CardScanR.
+		</xp:panel>
+
+	</xe:widgetContainer>
+	
+	
+	
+	<xe:widgetContainer id="widgetContainer2" titleBarText="Hire">
+		In case you are interested to hire the expertise from the people
+		behind this application the best way to discuss options is by
+		contacting the&#160;<xp:link escape="true" text="project owner" id="link7" value="http://www.openntf.org/Internal/home.nsf/profile.xsp?name=Patrick%20Kwintensson"></xp:link>
+		.
+	</xe:widgetContainer>
+	</xp:view>

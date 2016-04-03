@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.5" replicaid="C12579FA00396CD6" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="252" sequence="8" unid="81D008C6A6C2AA5BC12578ED004C71D5">
+<created><datetime dst="true">20110815T155458,77+02</datetime></created>
+<modified><datetime dst="true">20160401T145156,37+02</datetime></modified>
+<revised><datetime dst="true">20160401T145156,36+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160401T145156,37+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20120510T122715,90+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Henk Versteeg/O=E-fficient/C=NL</name><name>CN=NLDRB01/O=HCON/C=NL</name><name>CN=NLZSTS01/O=E-fficient/C=NL</name><name>CN=Koen Luijten/O=R4U/C=NL</name><name>CN=Henk Versteeg/O=E-fficient/C=NL</name><name>CN=Koen Luijten/O=R4U</name><name>CN=Patrick Kwinten/OU=extras/OU=0460/O=SANDVIK</name><name>CN=Information Systems/O=SANDVIK</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+<item name="$TITLE" sign="true"><text>CardScan</text></item>
+<item name="$Flags"><text>s34Q</text></item>
+<item name="$PublicAccess"><text>1</text></item>
+<item name="$POID"><datetime>20080208T112046,38+01</datetime></item>
+
+</note>

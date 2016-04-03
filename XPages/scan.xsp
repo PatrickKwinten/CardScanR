@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="New Contact"
+	createForm="true">
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="$f-contact"></xp:dominoDocument>
+	</xp:this.data>
+	<xp:this.navigationRules>
+		<xp:navigationRule outcome="thankyou" viewId="thankyou.xsp"></xp:navigationRule>
+	<xp:navigationRule outcome="xsp-success" viewId="/thankyou.xsp"></xp:navigationRule></xp:this.navigationRules>
+
+	<xc:ccAppLayout>
+		<xp:this.facets>
+			<xc:cardNewScan xp:key="facetMiddle"></xc:cardNewScan>
+			<xc:cardNewScanSideLeft xp:key="facetLeft"></xc:cardNewScanSideLeft>
+			<xc:cardNewScanSideRight xp:key="facetRight"></xc:cardNewScanSideRight>
+		</xp:this.facets>
+	</xc:ccAppLayout>
+</xp:view>

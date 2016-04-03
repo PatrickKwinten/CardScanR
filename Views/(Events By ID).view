@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='(Events By ID)' alias='$v-eventsbyID' xmlns='http://www.lotus.com/dxl'
+ version='9.0' maintenanceversion='1.5' replicaid='C12579FA00396CD6' showinmenu='false'
+ publicaccess='false' designerversion='8.5.2' unreadmarks='none' onopengoto='top'
+ onrefresh='refreshtop' headers='flat' opencollapsed='true' showresponsehierarchy='false'
+ showmargin='true' shrinkrows='true' extendlastcolumn='true' showhierarchies='false'
+ unreadcolor='black' rowlinecount='9' headerlinecount='1' rowspacing='1.25'
+ bgcolor='white' totalscolor='blue' headerbgcolor='#efefef' boldunreadrows='true'
+ evaluateactions='false' allownewdocuments='false' allowcustomizations='true'
+ hidemarginborder='false' marginwidth='0px 0px 1px' marginbgcolor='white'
+ gridstyle='solid' gridcolor='#efefef' uniquekeys='false' formatnoteid='5DDD69F099326CAFC12576EF003833D3'>
+<noteinfo noteid='1b6' unid='9325C4057301A552C12578EE003C7903' sequence='12'>
+<created><datetime dst='true'>20110816T130031,39+02</datetime></created>
+<modified><datetime dst='true'>20160403T191943,77+02</datetime></modified>
+<revised><datetime dst='true'>20160403T191943,76+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20160403T191943,77+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20120510T122715,14+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name
+>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+<globals><code event='options'><lotusscript>Option Public
+Option Declare
+
+</lotusscript></code></globals><code event='selection'><formula>SELECT ((Form = "Event") | (Form = "$f-event"))</formula></code>
+<actionbar useappletinbrowser='true' bgcolor='#b1b1d2' bordercolor='gray'><actionbarstyle
+ height='4.7500ex' repeat='hrepeat'><font size='9pt' name='multilingual'/><imageref
+ name='actionbarbg.gif'/></actionbarstyle>
+<actionbuttonstyle margintype='fixed' margin='5' showdropdown='true' bgcolor='none'><imageref
+ name='actionbarmouseover.gif'/></actionbuttonstyle><font size='9pt' name='multilingual'
+ color='#004080'/><border style='solid' width='0px 0px 2px' color='gray'/>
+<action title='More\Preferences'><code event='click'><lotusscript>Sub Click(Source As Button)
+	Dim session As New NotesSession
+	Dim db As NotesDatabase
+	Dim view As NotesView
+	Set db = session.CurrentDatabase
+	Set view = db.GetView("$v-preferences")
+	If Not view Is Nothing Then
+		Dim ws As New NotesUIWorkspace
+		Dim doc As NotesDocument	
+		Set doc = view.GetFirstDocument
+		If Not doc Is Nothing Then			
+			Call ws.EditDocument(True, doc)
+		Else
+			Call ws.ComposeDocument( "", "", "$f-preferences" )
+		End If
+	End If	
+End Sub</lotusscript></code><code event='hidewhen'><formula>@IsNotMember("[DBAdmin]";@UserRoles)</formula></code></action>
+<action title='New Event' icon='8'><code event='click'><formula>@Command([Compose];"$f-event")</formula></code></action>
+<action title='Categori_ze' showinbar='false' systemcommand='categorize'/>
+<action title='_Edit Document' showinbar='false' systemcommand='edit'/>
+<action title='Send Docu_ment' showinbar='false' systemcommand='send'/>
+<action title='_Forward' showinbar='false' systemcommand='forward'/>
+<action title='_Move To Folder...' showinbar='false' systemcommand='movetofolder'/>
+<action title='_Remove From Folder' showinbar='false' systemcommand='removefromfolder'/>
+<action title='(Global: SearchBar)' icon='148' showinmenu='false' onlyiconinbar='true'
+ align='right'><code event='click'><formula>@Command([ViewShowSearchBar])</formula></code><code
+ event='label'><formula>"Search This View"</formula></code></action></actionbar>
+<column sort='ascending' hidedetailrows='false' itemname='Reference' width='10'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='true' sortnocase='true'
+ showaslinks='false'><font size='9pt' color='gray'/><columnheader title='Reference'><font
+ size='9pt' name='multilingual'/></columnheader><code event='value'><formula
+>@Text(@DocumentUniqueID)</formula></code></column>
+<item name='$SelQuery' sign='true'>
+<rawitemdata type='f'>
+gQYAAAAAif8aAAAAAAABAA4ARXZlbnR8JGYtZXZlbnQ=
+</rawitemdata></item></view>
+

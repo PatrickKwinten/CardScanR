@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sharedactions xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.5'
+ replicaid='C12579FA00396CD6' hide='v3 v4strict' designerversion='8.5.3' maxid='1'>
+<noteinfo noteid='27e' unid='608B016505891970C12579FA0038D268' sequence='8'>
+<created><datetime dst='true'>20120510T122038,80+02</datetime></created>
+<modified><datetime dst='true'>20160403T191943,71+02</datetime></modified>
+<revised><datetime dst='true'>20160403T191943,70+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20160403T191943,71+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20120510T122716,12+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name
+>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+<action title='Configuration' id='1'><code event='click'><lotusscript>%REM
+	Created on 2010/04/01
+	Created by Patrick Kwinten
+	Description: Action that will open the form $f-preferences as a profile document
+%END REM
+Sub Click(Source As Button)
+	Dim session As New NotesSession
+	Dim db As NotesDatabase
+	Dim view As NotesView
+	Set db = session.CurrentDatabase
+	Set view = db.GetView("$v-preferences")
+	If Not view Is Nothing Then
+		Dim ws As New NotesUIWorkspace
+		Dim doc As NotesDocument	
+		Set doc = view.GetFirstDocument
+		If Not doc Is Nothing Then			
+			Call ws.EditDocument(True, doc)
+		Else
+			Call ws.ComposeDocument( "", "", "$f-preferences" )
+		End If
+	End If	
+End Sub</lotusscript></code><code event='hidewhen'><formula>@IsNotMember("[admin]";@UserRoles)</formula></code></action></sharedactions>
+

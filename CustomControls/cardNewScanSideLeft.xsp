@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:panel styleClass="lotusInfoBox">
+		<xp:panel><h3><span class="lotusLeft">Tips</span></h3></xp:panel>
+		Complete the form as much as possible. Information entered initially will bring value&#160;later.
+		<xp:panel><h3><span class="lotusLeft">Usage</span></h3></xp:panel>
+		Place a business card in the cardscanner and press the scan button. You can also enter information manually.
+		<xp:panel><h3><span class="lotusLeft">Important fields</span></h3></xp:panel>
+		The following fields are mandatory:
+		<xp:text escape="false" id="computedField1"><xp:this.value><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigRequiredFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigRequiredFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if (fields.length > 0){
+//return fields
+	var resultUL = ""
+	for(var i=0; i<fields.length;i++){
+	    resultUL += '<li>' + fields[i] + '</li>' ;
+	}
+	resultUL = '<ul>' + resultUL + '</ul>';
+	return resultUL;
+}
+else{
+	return "<ul><li>no required fields</li></ul>"
+}
+}]]></xp:this.value></xp:text>
+	
+		</xp:panel></xp:view>

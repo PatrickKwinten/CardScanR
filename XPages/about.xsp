@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="About"
+	createForm="false" dojoForm="false">
+
+	<xc:ccAppLayout>
+		<xp:this.facets>
+			<xc:ccAboutOpenNTF xp:key="facetRight"></xc:ccAboutOpenNTF>
+			<xc:ccAbout xp:key="facetMiddle"></xc:ccAbout>
+		</xp:this.facets>
+	</xc:ccAppLayout>
+</xp:view>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+	
+	<xe:widgetContainer id="widgetContainer1">
+		<xp:table>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="Website:" id="tx_Website_Label1"
+						for="tx_Website1" styleClass="lotusMeta">
+					</xp:label>
+					<xp:br></xp:br>
+					<xp:link escape="true" id="link1">
+						<xp:this.text><![CDATA[#{javascript:contact.getItemValueString("Tx_Website")}]]></xp:this.text>
+						<xp:this.value><![CDATA[#{javascript:contact.getItemValueString("Tx_Website")}]]></xp:this.value>
+					</xp:link>
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="Other:" id="tx_Other_Label1"
+						for="tx_Other1" styleClass="lotusMeta">
+					</xp:label>
+					<xp:br></xp:br>
+					<xp:inputTextarea value="#{contact.Tx_Other}"
+						id="inputTextarea1">
+					</xp:inputTextarea>
+				</xp:td>
+			</xp:tr>
+			<xp:tr>
+				<xp:td>
+					<xp:label value="Event reference:"
+						id="tx_EventReference_Label1" for="tx_EventReference1"
+						styleClass="lotusMeta">
+					</xp:label>
+					<xp:br></xp:br>
+					<xp:text escape="true" id="computedField1"
+						tagName="h2">
+						<xp:this.value><![CDATA[#{javascript:var eventID = contact.getItemValueString("Tx_EventReference");
+if (eventID ==""|| eventID ==null){
+	return "No event selected";
+}
+else {
+	var v:NotesView = database.getView("$v-eventsbyID");
+	var doc:NotesDocument = v.getDocumentByKey(eventID);
+	if (doc != null) {
+		return doc.getItemValueString("Tx_Name");
+	}
+	else{
+		return "No details available";
+	}
+}}]]></xp:this.value>
+					</xp:text>
+				</xp:td>
+			</xp:tr>
+		</xp:table></xe:widgetContainer>
+</xp:view>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><imageresource alias="table-roundborder-gray.gif" comment="used in tables as border image to create a rounded effect" designerversion="8" imagename="topcellbg.gif" maintenanceversion="1.5" name="global/img/doc/table/roundborder-gray.gif" publicaccess="false" replicaid="C12579FA00396CD6" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="19e" sequence="20" unid="F2CF937C04A9A941C12576EE004CD56B">
+<created><datetime>20100322T145913,71+01</datetime></created>
+<modified><datetime dst="true">20160401T145156,89+02</datetime></modified>
+<revised><datetime dst="true">20160401T145156,88+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160401T145156,89+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20120510T122715,02+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/OU=0460/O=SANDVIK</name><name>CN=Information Systems/O=SANDVIK</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Information Systems/O=SANDVIK</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Information Systems/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+
+<item name="$MimeType" sign="true"><text>image/gif</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20090410T115206,87+02</datetime></item>
+<item name="$$ScriptName" sign="true" summary="false"><text>table-roundborder-gray.gif</text></item></imageresource>

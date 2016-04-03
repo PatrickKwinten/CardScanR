@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+<xp:this.data>
+		<xp:dominoDocument var="contact" formName="$f-contact"
+			action="openDocument">
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xc:ccAppLayout><xp:this.facets>
+	<xc:ccContactDetailsRight xp:key="facetRight"><xc:this.rendered><![CDATA[#{javascript:if (contact.isEditable()){
+	return true;
+} else {
+	return false;
+}}]]></xc:this.rendered></xc:ccContactDetailsRight>
+	<xc:ccContactDetailsLeft xp:key="facetLeft"></xc:ccContactDetailsLeft>
+	<xp:span xp:key="facetMiddle"><xp:include id="include1" xp:key="ContentControl">
+					<xp:this.pageName><![CDATA[${javascript:if (contact.isEditable()){
+	return "ccContactEdit.xsp";
+} else {
+	return "ccContactRead.xsp";
+}}]]></xp:this.pageName>
+				</xp:include></xp:span></xp:this.facets></xc:ccAppLayout>
+
+</xp:view>

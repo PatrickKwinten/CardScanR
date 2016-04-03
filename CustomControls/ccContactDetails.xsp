@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xe:formTable id="formTable1" formTitle="Contact"
+		labelPosition="left">
+		<xe:formRow id="formRow1" label="Prefix:"
+			for="tx_NamePrefix1">
+			<xp:inputText value="#{contact.Tx_NamePrefix}"
+				id="tx_NamePrefix1">
+			</xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow2" label="Firstname:"
+			for="tx_FirstName1">
+			<xp:inputText value="#{contact.Tx_FirstName}"
+				id="tx_FirstName1">
+			</xp:inputText>
+		</xe:formRow>
+		<xe:formRow id="formRow3" label="Middlename:" for="tx_MiddleName1">
+			<xp:inputText value="#{contact.Tx_MiddleName}"
+				id="tx_MiddleName1">
+			</xp:inputText></xe:formRow>
+		<xe:formRow id="formRow4" label="Lastname:" for="tx_LastName1">
+			<xp:inputText value="#{contact.Tx_LastName}"
+				id="tx_LastName1">
+			</xp:inputText></xe:formRow>
+		<xe:formRow id="formRow5" label="Suffix:" for="tx_NameSuffix1">
+			<xp:inputText value="#{contact.Tx_NameSuffix}"
+				id="tx_NameSuffix1">
+			</xp:inputText></xe:formRow>
+		<xe:formRow id="formRow6" label="Title:" for="tx_Title1">
+			<xp:inputText value="#{contact.Tx_Title}" id="tx_Title1">
+			</xp:inputText></xe:formRow>
+		<xe:formRow id="formRow7" label="Company:" for="tx_Company1">
+			<xp:inputText value="#{contact.Tx_Company}"
+				id="tx_Company1">
+			</xp:inputText></xe:formRow>
+		
+	</xe:formTable>
+	<xp:panel styleClass="lotusHeader">
+
+		<xp:text escape="true" id="computedField2" tagName="h1">
+			<xp:this.value><![CDATA[#{javascript:contact.getItemValueString("Tx_Name")}]]></xp:this.value>
+		</xp:text>
+	</xp:panel>
+	<xp:panel>
+		
+	</xp:panel>
+	
+	<xp:table>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Email:" id="label1"
+					style="font-weight:bold" for="tx_Email1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Email}"
+					id="tx_Email1">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Telephone:" id="label2"
+					style="font-weight:bold" for="tx_Phone1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Phone}"
+					id="tx_Phone1">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+		<xp:tr>
+			<xp:td>
+				<xp:label value="Fax:" id="label3"
+					style="font-weight:bold" for="tx_Fax1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Fax}" id="tx_Fax1">
+				</xp:inputText>
+			</xp:td>
+		</xp:tr>
+
+	</xp:table>
+	<xp:br></xp:br>
+	
+	
+	<xp:table style="width:100.0%">
+		<xp:tr>
+			<xp:td align="left" valign="top" style="width:50.0%">
+				<xe:widgetContainer id="widgetContainer1"
+					titleBarText="Primary Address" style="margin-right:10px;">
+					<xp:table>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="Address:" id="label4"
+									for="tx_Addr11" style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_Address}" id="tx_Address1">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="Street:" id="label5"
+									style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_Street}" id="tx_Street1">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="Address 1:" id="label6"
+									style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_Addr1}" id="tx_Addr11">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="Address 2:" id="label7"
+									style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_Addr2}" id="tx_Addr21">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="Address 3:" id="label8"
+									style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_Addr3}" id="tx_Addr31">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="City:" id="label9"
+									style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText value="#{contact.Tx_City}"
+									id="tx_City1">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="State:" id="label10"
+									style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_State}" id="tx_State1">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="Postal code:"
+									id="label11" style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_PostalCode}" id="tx_PostalCode1">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="Country:" id="label12"
+									style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_Country}" id="tx_Country1">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+
+					</xp:table>
+
+
+
+				</xe:widgetContainer></xp:td>
+			<xp:td align="left" valign="top">
+				<xe:widgetContainer id="widgetContainer2"
+					titleBarText="Secondary Adress" style="margin-left:10px;">
+					<xp:table>
+
+
+
+
+
+
+
+
+
+						<xp:tr>
+							<xp:td>
+								<xp:label value="2nd address:"
+									id="tx_2ndAddress_Label1" for="tx_2ndAddress1" style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_2ndAddress}" id="tx_2ndAddress1">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="2nd street:"
+									id="tx_2ndStreet_Label1" for="tx_2ndStreet1" style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_2ndStreet}" id="tx_2ndStreet1">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="2nd addr1:"
+									id="tx_2ndAddr1_Label1" for="tx_2ndAddr11" style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_2ndAddr1}" id="tx_2ndAddr11">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="2nd addr2:"
+									id="tx_2ndAddr2_Label1" for="tx_2ndAddr21" style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_2ndAddr2}" id="tx_2ndAddr21">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="2nd addr3:"
+									id="tx_2ndAddr3_Label1" for="tx_2ndAddr31" style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_2ndAddr3}" id="tx_2ndAddr31">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="2nd city:"
+									id="tx_2ndCity_Label1" for="tx_2ndCity1" style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_2ndCity}" id="tx_2ndCity1">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="2nd state:"
+									id="tx_2ndState_Label1" for="tx_2ndState1" style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_2ndState}" id="tx_2ndState1">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="2nd postal code:"
+									id="tx_2ndPostalCode_Label1" for="tx_2ndPostalCode1" style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_2ndPostalCode}" id="tx_2ndPostalCode1">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+						<xp:tr>
+							<xp:td>
+								<xp:label value="2nd country:"
+									id="tx_2ndCountry_Label1" for="tx_2ndCountry1" style="font-weight:bold">
+								</xp:label>
+							</xp:td>
+							<xp:td>
+								<xp:inputText
+									value="#{contact.Tx_2ndCountry}" id="tx_2ndCountry1">
+								</xp:inputText>
+							</xp:td>
+						</xp:tr>
+					</xp:table>
+
+				</xe:widgetContainer></xp:td>
+		</xp:tr>
+	</xp:table>
+	
+</xp:view>

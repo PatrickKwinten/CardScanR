@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form name='Request' alias='$f-request' xmlns='http://www.lotus.com/dxl' version='9.0'
+ maintenanceversion='1.5' replicaid='C12579FA00396CD6' nocompose='true' publicaccess='false'
+ designerversion='8.5.3' renderpassthrough='true'>
+<noteinfo noteid='136' unid='5EB27C05B32D6E3DC12578ED006DC88E' sequence='11'>
+<created><datetime dst='true'>20110815T215907,66+02</datetime></created>
+<modified><datetime dst='true'>20160403T191943,49+02</datetime></modified>
+<revised><datetime dst='true'>20160403T191943,48+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20160403T191943,49+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20120510T122714,50+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name
+>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+<body><richtext>
+<pardef id='1'/>
+<par def='1'>//not implemented request functionality</par>
+<par def='1'><field borderstyle='inset' lookupeachchar='false' lookupaddressonrefresh='false'
+ type='keyword' allowmultivalues='true' kind='editable' name='Tx_Interest'
+ listinputseparators='comma' listdisplayseparator='comma'><keywords helperbutton='false'
+ columns='1' ui='checkbox'><textlist><text>Food</text><text>Beer</text><text
+>Code</text></textlist></keywords></field></par></richtext></body>
+<item name='$$ScriptName' summary='false' sign='true'><text>$f-request</text></item></form>
+

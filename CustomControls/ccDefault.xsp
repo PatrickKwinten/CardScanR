@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+
+
+	
+					
+						<xp:panel tagName="h1">
+							<xp:text escape="true" id="computedField10"
+								style="margin-top:10px;color:#4275AA;font-size:1.5em;">
+								<xp:this.value><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.title !== ""){
+	return tmp.title;
+}
+else{
+	return database.getTitle();
+}
+}]]></xp:this.value>
+							</xp:text>
+						</xp:panel>
+						
+
+						<xp:panel styleClass="lotusHeader"
+							style="margin:20px 0 20px 0;" tagName="h1">
+							Getting started
+						</xp:panel>
+						<xp:panel style="margin:10px 0px;">
+							Before you start using 
+							<xp:text escape="true"
+								id="computedField1">
+								<xp:this.value><![CDATA[#{javascript:var tmp = applicationScope.initPref;
+if (tmp.title !== ""){
+	return tmp.title;
+}
+else{
+	return database.getTitle();
+}}]]></xp:this.value>
+							</xp:text>
+							, please have a look at the following
+							instructions to help you getting started.
+						</xp:panel>
+
+						<xe:widgetContainer id="widgetContainer2"
+							titleBarText="How to scan a card">
+							Scanning a card is easy.&#160;
+							<xe:this.dropDownNodes>
+								<xe:pageTreeNode
+									label="Open scan dialog" page="/scan.xsp">
+								</xe:pageTreeNode>
+							</xe:this.dropDownNodes>
+							<ol>
+								<li>
+									Open the&#160;
+									<xp:link escape="true"
+										text="scan dialog" id="link1" value="/scan.xsp">
+										<xp:eventHandler event="onclick"
+											submit="true" refreshMode="complete">
+											<xp:this.action>
+												<xp:openPage
+													name="/scan.xsp">
+												</xp:openPage>
+											</xp:this.action>
+										</xp:eventHandler>
+									</xp:link>
+									.
+								</li>
+								<li>
+									Place the business card in the
+									scanner&#160;&amp; press the 'Scan'
+									button.
+									<ul>
+										<li>
+											For fields that do not get
+											returned a value from the
+											CardScan device you can
+											enter&#160;manually the
+											information.
+										</li>
+									</ul>
+								</li>
+								<li>Press 'Save'.</li>
+							</ol>
+						</xe:widgetContainer>
+						<xe:widgetContainer id="widgetContainer1"
+						titleBarText="Configuration">
+						In the&#160;
+						<xe:this.dropDownNodes>
+							<xe:pageTreeNode page="/admin.xsp"
+								label="Configuration">
+								<xe:this.rendered><![CDATA[#{javascript:var roles = context.getUser().getRoles();
+if(roles.contains("[admin]")& view.getPageName() != "/admin.xsp"){
+	return true;
+}
+else{
+	return false;
+}
+}]]></xe:this.rendered>
+							</xe:pageTreeNode>
+						</xe:this.dropDownNodes>
+						<xp:span>
+							panel
+							<xp:this.rendered><![CDATA[#{javascript:var roles = context.getUser().getRoles();
+if(roles.contains("[admin]")& view.getPageName() != "/admin.xsp"){
+	return false;
+}
+else{
+	return true;
+}
+}]]></xp:this.rendered>
+						</xp:span>
+						<xp:link escape="true" text="panel" id="link2"
+							value="/admin.xsp">
+							<xp:this.rendered><![CDATA[#{javascript:var roles = context.getUser().getRoles();
+if(roles.contains("[admin]")& view.getPageName() != "/admin.xsp"){
+	return true;
+}
+else{
+	return false;
+}
+}]]></xp:this.rendered>
+						</xp:link>
+						&#160; you can:
+						<ul>
+							<li>Select the event for this session</li>
+							<li>
+								Select the fields that will be available
+								for the contact registration
+							</li>
+
+						</ul>
+
+					</xe:widgetContainer>
+
+			
+	
+</xp:view>

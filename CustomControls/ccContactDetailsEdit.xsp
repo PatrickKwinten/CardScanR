@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.data>
+		<xp:dominoDocument var="contact" formName="$f-contact"
+			action="editDocument">
+		</xp:dominoDocument>
+	</xp:this.data>
+
+	<xp:table styleClass="lotusFormTable" style="width:500px">
+		<xp:tr>
+			<xp:td colspan="2" styleClass="lotusFormTitle">
+				<xp:text escape="true" id="computedField1"
+					tagName="h2">
+
+					<xp:this.value><![CDATA[#{javascript:return "Contact"}]]></xp:this.value>
+				</xp:text>
+			</xp:td>
+
+			<xp:td style="width:20px"></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Name:" id="tx_Name_Label1"
+					for="tx_Name1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Name}" id="tx_Name1"
+					styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Prefix:" id="tx_NamePrefix_Label1"
+					for="tx_NamePrefix1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_NamePrefix}"
+					id="tx_NamePrefix1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="First name:" id="tx_FirstName_Label1"
+					for="tx_FirstName1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_FirstName}"
+					id="tx_FirstName1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Middle name:" id="tx_MiddleName_Label1"
+					for="tx_MiddleName1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_MiddleName}"
+					id="tx_MiddleName1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Last name:" id="tx_LastName_Label1"
+					for="tx_LastName1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_LastName}"
+					id="tx_LastName1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Suffix:" id="tx_NameSuffix_Label1"
+					for="tx_NameSuffix1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_NameSuffix}"
+					id="tx_NameSuffix1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Title:" id="tx_Title_Label1"
+					for="tx_Title1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Title}" id="tx_Title1"
+					styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Company:" id="tx_Company_Label1"
+					for="tx_Company1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Company}"
+					id="tx_Company1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Address:" id="tx_Address_Label1"
+					for="tx_Address1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Address}"
+					id="tx_Address1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Street:" id="tx_Street_Label1"
+					for="tx_Street1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Street}"
+					id="tx_Street1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Addr1:" id="tx_Addr1_Label1"
+					for="tx_Addr11">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Addr1}" id="tx_Addr11"
+					styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Addr2:" id="tx_Addr2_Label1"
+					for="tx_Addr21">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Addr2}" id="tx_Addr21"
+					styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Addr3:" id="tx_Addr3_Label1"
+					for="tx_Addr31">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Addr3}" id="tx_Addr31"
+					styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="City:" id="tx_City_Label1"
+					for="tx_City1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_City}" id="tx_City1"
+					styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="State:" id="tx_State_Label1"
+					for="tx_State1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_State}" id="tx_State1"
+					styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Postal code:" id="tx_PostalCode_Label1"
+					for="tx_PostalCode1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_PostalCode}"
+					id="tx_PostalCode1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Country:" id="tx_Country_Label1"
+					for="tx_Country1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Country}"
+					id="tx_Country1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="2nd address:" id="tx_2ndAddress_Label1"
+					for="tx_2ndAddress1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_2ndAddress}"
+					id="tx_2ndAddress1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="2nd street:" id="tx_2ndStreet_Label1"
+					for="tx_2ndStreet1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_2ndStreet}"
+					id="tx_2ndStreet1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="2nd addr1:" id="tx_2ndAddr1_Label1"
+					for="tx_2ndAddr11">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_2ndAddr1}"
+					id="tx_2ndAddr11" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="2nd addr2:" id="tx_2ndAddr2_Label1"
+					for="tx_2ndAddr21">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_2ndAddr2}"
+					id="tx_2ndAddr21" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="2nd addr3:" id="tx_2ndAddr3_Label1"
+					for="tx_2ndAddr31">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_2ndAddr3}"
+					id="tx_2ndAddr31" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="2nd city:" id="tx_2ndCity_Label1"
+					for="tx_2ndCity1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_2ndCity}"
+					id="tx_2ndCity1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="2nd state:" id="tx_2ndState_Label1"
+					for="tx_2ndState1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_2ndState}"
+					id="tx_2ndState1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="2nd postal code:"
+					id="tx_2ndPostalCode_Label1" for="tx_2ndPostalCode1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_2ndPostalCode}"
+					id="tx_2ndPostalCode1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="2nd country:" id="tx_2ndCountry_Label1"
+					for="tx_2ndCountry1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_2ndCountry}"
+					id="tx_2ndCountry1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Telephone:" id="tx_Phone_Label1"
+					for="tx_Phone1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Phone}" id="tx_Phone1"
+					styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Fax:" id="tx_Fax_Label1"
+					for="tx_Fax1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Fax}" id="tx_Fax1"
+					styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Email:" id="tx_Email_Label1"
+					for="tx_Email1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Email}" id="tx_Email1"
+					styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel">
+				<xp:label value="Website:" id="tx_Website_Label1"
+					for="tx_Website1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+				<xp:inputText value="#{contact.Tx_Website}"
+					id="tx_Website1" styleClass="lotusText">
+				</xp:inputText>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+		<xp:tr styleClass="lotusFormFieldRow">
+			<xp:td styleClass="lotusFormLabel" valign="top">
+				<xp:label value="Other:" id="tx_Other_Label1"
+					for="tx_Other1">
+				</xp:label>
+			</xp:td>
+			<xp:td>
+
+				<xp:inputTextarea id="inputTextarea1"
+					value="#{contact.Tx_Other}" styleClass="lotusText"
+					style="height:100.0px;width:300.0px">
+				</xp:inputTextarea>
+			</xp:td>
+			<xp:td></xp:td>
+		</xp:tr>
+	</xp:table>
+</xp:view>

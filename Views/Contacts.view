@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='Contacts' alias='$v-contacts' xmlns='http://www.lotus.com/dxl'
+ version='9.0' maintenanceversion='1.5' replicaid='C12579FA00396CD6' showinmenu='false'
+ publicaccess='false' designerversion='8.5.3' default='true' unreadmarks='none'
+ onopengoto='top' onrefresh='refreshtop' headers='flat' opencollapsed='true'
+ showresponsehierarchy='false' showmargin='true' shrinkrows='true' extendlastcolumn='true'
+ showhierarchies='false' unreadcolor='black' rowlinecount='9' headerlinecount='1'
+ rowspacing='1.25' bgcolor='white' totalscolor='blue' headerbgcolor='#efefef'
+ boldunreadrows='true' evaluateactions='false' allownewdocuments='false' allowcustomizations='true'
+ hidemarginborder='false' marginwidth='0px 0px 1px' marginbgcolor='white'
+ gridstyle='solid' gridcolor='#efefef' uniquekeys='false' formatnoteid='5DDD69F099326CAFC12576EF003833D3'>
+<noteinfo noteid='1ba' unid='D242F1468F0CA3B8C12578ED006CB005' sequence='18'>
+<created><datetime dst='true'>20110815T214709,49+02</datetime></created>
+<modified><datetime dst='true'>20160403T191942,83+02</datetime></modified>
+<revised><datetime dst='true'>20160403T191942,82+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20160403T191942,83+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20120510T122715,16+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name
+>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+<globals><code event='options'><lotusscript>Option Public
+Option Declare
+
+</lotusscript></code></globals><code event='selection'><formula>SELECT ((Form = "Contact") | (Form = "$f-contact"))</formula></code>
+<actionbar useappletinbrowser='true' bgcolor='#b1b1d2' bordercolor='gray'><actionbarstyle
+ height='4.7500ex' repeat='hrepeat'><font size='9pt' name='multilingual'/><imageref
+ name='actionbarbg.gif'/></actionbarstyle>
+<actionbuttonstyle margintype='fixed' margin='5' showdropdown='true' bgcolor='none'><imageref
+ name='actionbarmouseover.gif'/></actionbuttonstyle><font size='9pt' name='multilingual'
+ color='#004080'/><border style='solid' width='0px 0px 2px' color='gray'/>
+<sharedactionref id='1'>
+<action title='More\Configuration'><code event='click'><lotusscript>%REM
+	Created on 2010/04/01
+	Created by Patrick Kwinten
+	Description: Action that will open the form $f-preferences as a profile document
+%END REM
+Sub Click(Source As Button)
+	Dim session As New NotesSession
+	Dim db As NotesDatabase
+	Dim view As NotesView
+	Set db = session.CurrentDatabase
+	Set view = db.GetView("$v-preferences")
+	If Not view Is Nothing Then
+		Dim ws As New NotesUIWorkspace
+		Dim doc As NotesDocument	
+		Set doc = view.GetFirstDocument
+		If Not doc Is Nothing Then			
+			Call ws.EditDocument(True, doc)
+		Else
+			Call ws.ComposeDocument( "", "", "$f-preferences" )
+		End If
+	End If	
+End Sub</lotusscript></code><code event='hidewhen'><formula>@IsNotMember("[admin]";@UserRoles)</formula></code></action></sharedactionref>
+<action title='Categori_ze' showinbar='false' systemcommand='categorize'/>
+<action title='_Edit Document' showinbar='false' systemcommand='edit'/>
+<action title='Send Docu_ment' showinbar='false' systemcommand='send'/>
+<action title='_Forward' showinbar='false' systemcommand='forward'/>
+<action title='_Move To Folder...' showinbar='false' systemcommand='movetofolder'/>
+<action title='_Remove From Folder' showinbar='false' systemcommand='removefromfolder'/>
+<action title='(Global: SearchBar)' icon='148' showinmenu='false' onlyiconinbar='true'
+ align='right'><code event='click'><formula>@Command([ViewShowSearchBar])</formula></code><code
+ event='label'><formula>"Search This View"</formula></code></action></actionbar>
+<column sort='ascending' hidedetailrows='false' itemname='Tx_EventReference'
+ width='9.2500' resizable='true' separatemultiplevalues='true' sortnoaccent='true'
+ sortnocase='true' showaslinks='false' categorized='true'><columnheader title='Event'><font
+ size='9pt' name='multilingual'/></columnheader></column>
+<column sort='ascending' hidedetailrows='false' listseparator='newline' itemname='Tx_Email'
+ width='27' resizable='true' separatemultiplevalues='false' sortnoaccent='false'
+ sortnocase='true' showaslinks='false'><font size='9pt' color='#ff8100'/><columnheader
+ title='Email'><font size='9pt' name='multilingual'/></columnheader><columnnamesformat
+ showonline='true' columncontainsname='false' verticalorientation='top'/></column>
+<item name='$SelQuery' sign='true'>
+<rawitemdata type='f'>
+gQYAAAAAif8eAAAAAAABABIAQ29udGFjdHwkZi1jb250YWN0
+</rawitemdata></item></view>
+

@@ -1,0 +1,328 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form name='(GLOBAL: Preferences)' alias='$f-preferences' xmlns='http://www.lotus.com/dxl'
+ version='9.0' maintenanceversion='1.5' replicaid='C12579FA00396CD6' nocompose='true'
+ publicaccess='false' designerversion='8.5.3' comment='Form used to store application settings'
+ renderpassthrough='true'>
+<noteinfo noteid='21a' unid='A3E2CCF46A89EEE2C12576EE004BE173' sequence='93'>
+<created><datetime>20100322T144849,15+01</datetime></created>
+<modified><datetime dst='true'>20160403T191943,81+02</datetime></modified>
+<revised><datetime dst='true'>20160403T191943,80+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20160403T191943,81+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20120510T122715,64+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name
+>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby><code
+ event='windowtitle'><formula>"Preferences"</formula></code>
+<actionbar useappletinbrowser='true' bordercolor='black'><actionbarstyle height='4.7500ex'
+ repeat='hrepeat'><font size='9pt' name='multilingual'/><imageref name='actionbarbg.gif'/></actionbarstyle>
+<actionbuttonstyle margintype='fixed' margin='5' bgcolor='none'><imageref
+ name='actionbarmouseover.gif'/></actionbuttonstyle><font size='9pt' name='multilingual'
+ color='#004080'/><border style='solid' width='0px 0px 1px' color='gray'/>
+<action title='Close' icon='11' hide='web mobile'><code event='click'><formula
+>@Command([FileCloseWindow])</formula></code></action>
+<action title='Save' icon='10' hide='preview read web mobile'><code event='click'><formula
+>@Command([FileSave])</formula></code></action></actionbar>
+<body><richtext><formregionbegin type='header' sizetofit='false' height='100px'/>
+<pardef id='1'><code event='hidewhen'><formula>1</formula></code></pardef>
+<par def='1'><run><font size='9pt' color='green'/>&lt;!-- hidden --&gt;</run></par>
+<table widthtype='fitmargins' minrowheight='0.5000in' leftmargin='0.8750in'
+ rightmargin='100%' rowspacing='0.0396in' refwidth='4.9389in'><tablecolumn
+ width='1.6646in'/><tablecolumn width='100%'/><tablecolumn width='3.1493in'/>
+<tablerow>
+<tablecell borderwidth='0px'>
+<pardef id='3' leftmargin='0.1000in' keepwithnext='true' keeptogether='true'/>
+<par def='3'><run><font size='12pt' style='bold'/>Preferences</run></par></tablecell>
+<tablecell borderwidth='0px'>
+<pardef id='4' keepwithnext='true' keeptogether='true'/>
+<par def='4'><run><font size='12pt' style='bold'/></run></par></tablecell>
+<tablecell valign='bottom' borderwidth='0px'>
+<pardef id='5' align='right' hide='copy' keepwithnext='true' keeptogether='true'><code
+ event='hidewhen'><formula>getProf := @Environment("showHeaderDetails");
+getProf = "1" | @IsDocBeingEdited</formula></code></pardef>
+<par def='5'><run><font size='9pt' color='green'/></run><actionhotspot hotspotstyle='none'><code
+ event='click'><formula>@If(@Version &lt; @Text(172); @Return(""); "");
+@SetEnvironment("showHeaderDetails"; "1");
+@Command([RefreshHideFormulas])</formula></code><run><font size='9pt' style='underline'
+ color='blue'/>Show Details</run></actionhotspot><run><font size='9pt'/></run></par>
+<pardef id='6' align='right' hide='copy' keepwithnext='true' keeptogether='true'><code
+ event='hidewhen'><formula>getProf := @Environment("showHeaderDetails");
+getProf = "" | @IsDocBeingEdited</formula></code></pardef>
+<par def='6'><run><font size='9pt'/></run><actionhotspot hotspotstyle='none'><run
+><font size='9pt'/></run></actionhotspot><run><font size='9pt'/></run><actionhotspot
+ hotspotstyle='none'><code event='click'><formula>@If(@Version &lt; @Text(172); @Return(""); "");
+@SetEnvironment("showHeaderDetails"; "");
+@Command([RefreshHideFormulas])</formula></code><run><font size='9pt' style='underline'
+ color='blue'/>Hide Details</run></actionhotspot><run><font size='9pt' color='green'/></run><actionhotspot
+ hotspotstyle='none' regionid='1'><code event='click'><formula>@If(@Version &lt; @Text(172); @Return(""); "");
+@SetEnvironment("showHeaderInstructions"; "1");
+@Command([RefreshHideFormulas])</formula></code><run><font size='9pt' style='underline'
+ color='blue'/></run></actionhotspot></par>
+<pardef id='7' align='right' hide='read print preview embedded' keepwithnext='true'
+ keeptogether='true'><code event='hidewhen'><formula>getProf := @Environment("showHeaderInstructions");
+getProf = "1"</formula></code></pardef>
+<par def='7'><region regionid='1' end='true'><run><font size='9pt' style='underline'
+ color='blue'/>Show Instructions</run></region><run><font size='9pt'/></run></par>
+<pardef id='8' align='right' hide='read print copy preview embedded' keepwithnext='true'
+ keeptogether='true'><code event='hidewhen'><formula>getProf := @Environment("showHeaderInstructions");
+getProf = "0" | getProf = ""</formula></code></pardef>
+<par def='8'><run><font size='9pt'/></run><actionhotspot hotspotstyle='none'><run
+><font size='9pt'/></run></actionhotspot><run><font size='9pt'/></run><actionhotspot
+ hotspotstyle='none'><code event='click'><formula>@If(@Version &lt; @Text(172); @Return(""); "");
+@SetEnvironment("showHeaderInstructions"; "");
+@Command([RefreshHideFormulas])</formula></code><run><font size='9pt' style='underline'
+ color='blue'/>Hide Instructions</run></actionhotspot><run><font size='9pt'
+ color='green'/></run></par></tablecell></tablerow></table>
+<par def='1'><run><font size='9pt' color='green'/>&lt;!-- hidden --&gt;</run></par><formregionend
+ type='header'/><formregionbegin type='body'/>
+<pardef id='9'/>
+<par def='9'><run><font size='9pt' color='green'/></run></par>
+<table widthtype='fitmargins' rowdisplay='tabs' refwidth='6.8708in'><tablecolumn
+ width='100%'/>
+<tablerow tablabel='Basics'>
+<tablecell borderwidth='0px'>
+<pardef id='11' spacebefore='2' keepwithnext='true' keeptogether='true'/>
+<par def='11'><run><font style='bold' color='#009cff'/>LOGO</run></par>
+<table widthtype='fitmargins' cellbordercolor='silver' leftmargin='0' rowspacing='0.0396in'
+ columnspacing='0.0785in' refwidth='6.8500in'><border style='image' width='1px'><imageref
+ name='table-roundborder-gray.gif'/></border><tablecolumn width='100%'/>
+<tablerow>
+<tablecell colorstyle='vgradient' borderwidth='0px' bgcolor='white' altbgcolor='#f7f7f7'>
+<pardef id='13' keepwithnext='true' keeptogether='true'><code event='hidewhen'><formula
+>1</formula></code></pardef>
+<par def='13'><run><font size='9pt' color='green'/>&lt;!-- hidden --&gt;</run></par>
+<table widthtype='fitmargins' cellbordercolor='silver' leftmargin='0' rowspacing='0.0396in'
+ refwidth='6.6931in'><tablecolumn width='3in'/><tablecolumn width='100%'/>
+<tablerow>
+<tablecell borderwidth='0px'>
+<pardef id='15' leftmargin='5%' hide='web' keepwithnext='true' keeptogether='true'/>
+<par def='15'><run><font size='9pt' style='bold' color='gray'/>Title:</run></par></tablecell>
+<tablecell borderwidth='0px'>
+<pardef id='16' hide='web' keepwithnext='true' keeptogether='true'/>
+<par def='16'><run><font size='9pt' style='bold' color='gray'/></run><field
+ type='text' kind='editable' name='Tx_PrefTitle'/><compositedata type='98'
+ prevtype='65418' nexttype='222' afterparcount='10' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'
+ style='bold' color='gray'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell borderwidth='0px'>
+<par def='15'><run><font size='9pt' style='bold' color='gray'/>Sub Title:</run></par></tablecell>
+<tablecell borderwidth='0px'>
+<par def='16'><field type='text' kind='editable' name='Tx_PrefSubTitle'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'
+ style='bold' color='gray'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell borderwidth='0px'>
+<pardef id='17' leftmargin='5%' spaceafter='1.5' hide='web' keepwithnext='true'
+ keeptogether='true'/>
+<par def='17'><run><font size='9pt' style='bold' color='gray'/>Select Logo:</run></par>
+<pardef id='18' leftmargin='5%' keepwithnext='true' keeptogether='true'/>
+<par def='18'><field usenotesstyle='false' height='0.7875in' width='1.8896in'
+ multiline='true' borderstyle='single' lookupeachchar='false' lookupaddressonrefresh='false'
+ type='keyword' kind='editable' name='Tx_Logotypes'><keywords helperbutton='false'
+ recalconchange='true' columns='1' ui='listbox'><textlist><text>No Logo|logoYours</text><text
+>OpenNTF|logoOpenNTF</text><text>CardScan|logoCardscan</text><text>IBM|logoIBM</text></textlist></keywords><code
+ event='defaultvalue'><formula>Tx_Logotypes</formula></code></field></par>
+<pardef id='19' leftmargin='5%' hide='web' keepwithnext='true' keeptogether='true'><code
+ event='hidewhen'><formula>getProf := @Environment("showHeaderInstructions");
+getProf = "0" | getProf = ""</formula></code></pardef>
+<par def='19'><run><font size='9pt' style='bold' color='green'/></run></par></tablecell>
+<tablecell borderwidth='0px'>
+<pardef id='20' spaceafter='1.5' hide='web' keepwithnext='true' keeptogether='true'/>
+<par def='20'><run><font size='9pt' style='bold' color='gray'/>Image example:</run></par>
+<table widthtype='fitmargins' minrowheight='1in' leftmargin='0' refwidth='3.6931in'><tablecolumn
+ width='100%'/>
+<tablerow>
+<tablecell borderwidth='0px'>
+<cellbackground repeat='once'><imageref><code event='value'><formula>@If(Tx_Logotypes= "" ; "SandvikNotesLtr0"; Tx_Logotypes)</formula></code></imageref></cellbackground>
+<par def='16'><run><font size='9pt' style='bold' color='green'/></run></par></tablecell></tablerow></table>
+<pardef id='22' hide='notes web' keepwithnext='true' keeptogether='true'/>
+<par def='22'><run><font size='9pt' style='bold' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell borderwidth='0px'>
+<par def='18'><run><font size='9pt' style='bold' color='gray'/>Theme:</run></par></tablecell>
+<tablecell borderwidth='0px'>
+<pardef id='23' keepwithnext='true' keeptogether='true'/>
+<par def='23'><field type='keyword' kind='editable' name='Tx_PrefTheme'><keywords
+ ui='dialoglist'><textlist><text>default</text><text>blue</text><text>gen1</text><text
+>gold</text><text>green</text><text>onyx</text><text>orange</text><text>pink</text><text
+>purple</text><text>red</text><text>silver</text></textlist></keywords><code
+ event='defaultvalue'><formula>"default"</formula></code></field><run><font
+ size='9pt' style='bold' color='gray'/></run></par></tablecell></tablerow></table>
+<pardef id='24' hide='web' keepwithnext='true' keeptogether='true'><code event='hidewhen'><formula
+>getProf := @Environment("showHeaderInstructions");
+getProf = "0" | getProf = ""</formula></code></pardef>
+<par def='24'><run><font size='9pt' style='bold' color='green'/>Web client:</run></par>
+<pardef id='25' spaceafter='1.5' hide='web' keepwithnext='true' keeptogether='true'><code
+ event='hidewhen'><formula>getProf := @Environment("showHeaderInstructions");
+getProf = "0" | getProf = ""</formula></code></pardef>
+<par def='25'><run><font size='9pt' style='bold' color='green'/>The selected image will be displayed in the Branding section.</run></par>
+<par def='24'><run><font size='9pt' style='bold' color='green'/>Notes client:</run></par>
+<par def='24'><run><font size='9pt' style='bold' color='green'/>The selected image will be displayed in the Header section of each form.</run></par></tablecell></tablerow></table>
+<par def='11'><run><font size='9pt' color='green'/></run></par></tablecell></tablerow>
+<tablerow tablabel='Layout'>
+<tablecell borderwidth='0px'>
+<par def='11'><run><font style='bold' color='#009cff'/>SECTIONS</run></par>
+<table cellbordercolor='silver' leftmargin='0' widthtype='fixedleft' rowspacing='0.0396in'
+ refwidth='6.8500in'><border style='image' width='1px'><imageref name='table-roundborder-gray.gif'/></border><tablecolumn
+ width='6.8500in'/>
+<tablerow>
+<tablecell colorstyle='vgradient' borderwidth='0px' bgcolor='white' altbgcolor='#efefef'>
+<pardef id='27' keepwithnext='true' keeptogether='true'><code event='hidewhen'><formula
+>1</formula></code></pardef>
+<par def='27'><run><font size='9pt' color='green'/>&lt;!-- hidden --&gt;</run></par>
+<table widthtype='fitmargins' cellbordercolor='silver' leftmargin='0' rowspacing='0.0396in'
+ refwidth='6.8500in'><tablecolumn width='2.0479in'/><tablecolumn width='100%'/>
+<tablerow>
+<tablecell borderwidth='0px'>
+<pardef id='29' leftmargin='5%' keepwithnext='true' keeptogether='true'/>
+<par def='29'><run><font size='9pt' style='bold' color='gray'/>Display Footer:</run></par></tablecell>
+<tablecell borderwidth='0px'>
+<pardef id='30' keepwithnext='true' keeptogether='true'/>
+<par def='30'><field borderstyle='none' lookupeachchar='false' lookupaddressonrefresh='false'
+ type='keyword' kind='editable' name='Tx_PrefFooter'><keywords helperbutton='false'
+ columns='2' ui='radiobutton'><textlist><text>Yes | 1</text><text>No | 0</text></textlist></keywords><code
+ event='defaultvalue'><formula>"0"</formula></code></field></par>
+<pardef id='31' hide='edit copy previewedit' keepwithnext='true' keeptogether='true'/>
+<par def='31'><computedtext><code event='value'><formula>varValue := Tx_PrefFooter;
+
+@If( varValue = "1"; "Yes"; varValue = "0"; "No"; "not available")</formula></code></computedtext></par>
+<pardef id='32' hide='read print preview' keepwithnext='true' keeptogether='true'><code
+ event='hidewhen'><formula>getProf := @Environment("showHeaderInstructions");
+getProf = "0" | getProf = ""</formula></code></pardef>
+<par def='32'><run><font size='8pt' style='bold' color='green'/>Should the Footer section be displayed on the bottom?</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell borderwidth='0px'>
+<par def='29'><run><font size='9pt' style='bold' color='gray'/>Display Legal:</run></par></tablecell>
+<tablecell borderwidth='0px'>
+<pardef id='33' leftmargin='0.0104in' keepwithnext='true' keeptogether='true'/>
+<par def='33'><field borderstyle='none' lookupeachchar='false' lookupaddressonrefresh='false'
+ type='keyword' kind='editable' name='Tx_PrefLegal'><keywords helperbutton='false'
+ columns='2' ui='radiobutton'><textlist><text>Yes | 1</text><text>No | 0</text></textlist></keywords><code
+ event='defaultvalue'><formula>"0"</formula></code></field></par>
+<pardef id='34' leftmargin='0.0104in' hide='edit copy previewedit' keepwithnext='true'
+ keeptogether='true'/>
+<par def='34'><computedtext><code event='value'><formula>varValue := Tx_PrefLegal;
+
+@If( varValue = "1"; "Yes"; varValue = "0"; "No"; "not available")</formula></code></computedtext></par>
+<pardef id='35' leftmargin='0.0104in' hide='read print preview' keepwithnext='true'
+ keeptogether='true'><code event='hidewhen'><formula>getProf := @Environment("showHeaderInstructions");
+getProf = "0" | getProf = ""</formula></code></pardef>
+<par def='35'><run><font size='8pt' style='bold' color='green'/>Should the Legal section be displayed on the bottom?</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell borderwidth='0px'>
+<par def='29'><run><font size='9pt' style='bold' color='gray'/>Legal text:</run></par></tablecell>
+<tablecell borderwidth='0px'>
+<pardef id='36' hide='notes web' keepwithnext='true' keeptogether='true'/>
+<par def='36'><run><font size='9pt' color='green'/>&lt;!-- hidden --&gt;</run></par>
+<table minrowheight='1.1813in' cellbordercolor='gray' leftmargin='0' widthtype='fixedleft'
+ rowspacing='0.0194in' columnspacing='0.0194in' refwidth='4.0389in'><tablecolumn
+ width='4in'/>
+<tablerow>
+<tablecell bgcolor='white'>
+<pardef id='38' keepwithnext='true' keeptogether='true'/>
+<par def='38'><field showdelimiters='false' type='text' kind='editable' name='Tx_PrefLegalText'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='8' containertype='65418'
+ aftercontainercount='1' afterbegincount='4'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell></tablerow></table>
+<par def='32'><run><font size='9pt' style='bold' color='green'/>Free text field.</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell borderwidth='0px'>
+<par def='29'><run><font size='9pt' style='bold' color='gray'/>Display Search:</run></par></tablecell>
+<tablecell borderwidth='0px'>
+<par def='30'><field borderstyle='none' lookupeachchar='false' lookupaddressonrefresh='false'
+ type='keyword' kind='editable' name='Tx_PrefSearch'><keywords helperbutton='false'
+ columns='2' ui='radiobutton'><textlist><text>Yes | 1</text><text>No | 0</text></textlist></keywords><code
+ event='defaultvalue'><formula>"0"</formula></code></field></par>
+<par def='31'><computedtext><code event='value'><formula>varValue := Tx_PrefSearch;
+
+@If( varValue = "1"; "Yes"; varValue = "0"; "No"; "not available")</formula></code></computedtext></par>
+<par def='32'><run><font size='8pt' style='bold' color='green'/>Should the search field in the application bar?</run></par></tablecell></tablerow></table>
+<par def='27'><run><font size='9pt' color='green'/>&lt;!-- hidden --&gt;</run></par></tablecell></tablerow></table></tablecell></tablerow>
+<tablerow tablabel='Scan Options'>
+<tablecell borderwidth='0px'>
+<pardef id='39' keepwithnext='true' keeptogether='true'/>
+<par def='39'><run><font style='bold' color='#009cff'/></run></par>
+<table cellbordercolor='silver' leftmargin='0' widthtype='fixedleft' rowspacing='0.0396in'
+ refwidth='6.8500in'><border style='image' width='1px'><imageref name='table-roundborder-gray.gif'/></border><tablecolumn
+ width='6.8500in'/>
+<tablerow>
+<tablecell colorstyle='vgradient' borderwidth='0px' bgcolor='white' altbgcolor='#efefef'>
+<par def='27'><run><font size='9pt' color='green'/>&lt;!-- hidden --&gt;</run></par>
+<table widthtype='fitmargins' cellbordercolor='silver' leftmargin='0' rowspacing='0.0396in'
+ refwidth='6.8500in'><tablecolumn width='2.0479in'/><tablecolumn width='100%'/>
+<tablerow>
+<tablecell borderwidth='0px'>
+<par def='29'><run><font size='9pt' style='bold' color='gray'/>Used Fields:</run></par></tablecell>
+<tablecell borderwidth='0px'>
+<par def='30'><field type='text' allowmultivalues='true' kind='editable' name='Tx_ConfigScanFields'
+ listinputseparators='comma semicolon newline' listdisplayseparator='newline'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par>
+<par def='32'><run><font size='8pt' style='bold' color='green'/>Fields displayed in the contact entry form.the bottom?</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell borderwidth='0px'>
+<par def='29'><run><font size='9pt' style='bold' color='gray'/>Required Fields:</run></par></tablecell>
+<tablecell borderwidth='0px'>
+<par def='33'><field type='text' allowmultivalues='true' kind='editable' name='Tx_ConfigRequiredFields'
+ listinputseparators='comma semicolon newline' listdisplayseparator='newline'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par>
+<par def='35'><run><font size='8pt' style='bold' color='green'/>Fields that require input.</run></par></tablecell></tablerow></table>
+<par def='27'><run><font size='9pt' color='green'/>&lt;!-- hidden --&gt;</run></par></tablecell></tablerow></table>
+<par def='11'><run><font style='bold' color='#009cff'/>THANK YOU</run></par>
+<table cellbordercolor='silver' leftmargin='0' widthtype='fixedleft' rowspacing='0.0396in'
+ refwidth='6.8500in'><border style='image' width='1px'><imageref name='table-roundborder-gray.gif'/></border><tablecolumn
+ width='6.8500in'/>
+<tablerow>
+<tablecell colorstyle='vgradient' borderwidth='0px' bgcolor='white' altbgcolor='#efefef'>
+<par def='27'><run><font size='9pt' color='green'/>&lt;!-- hidden --&gt;</run></par>
+<table widthtype='fitmargins' cellbordercolor='silver' leftmargin='0' rowspacing='0.0396in'
+ refwidth='6.8500in'><tablecolumn width='2.0479in'/><tablecolumn width='100%'/>
+<tablerow>
+<tablecell borderwidth='0px'>
+<par def='29'><run><font size='9pt' style='bold' color='gray'/>Message:</run></par></tablecell>
+<tablecell borderwidth='0px'>
+<par def='31'><field type='richtext' kind='editable' name='Tx_ConfigThankYou'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAEAAAA=
+</compositedata></par>
+<par def='32'><run><font size='8pt' style='bold' color='green'/>Fields displayed in the contact entry form.the bottom?</run></par></tablecell></tablerow></table>
+<par def='27'><run><font size='9pt' color='green'/>&lt;!-- hidden --&gt;</run></par></tablecell></tablerow></table>
+<par def='39'><run><font style='bold'/></run></par></tablecell></tablerow></table><subformref
+ name='(Global: Document Footer) | $sf-docfooter'/>
+<pardef id='41' hide='notes web mobile'><code event='hidewhen'><formula>1</formula></code></pardef>
+<par def='41'><run><font color='red'/><field type='authors' kind='computed'
+ name='Au_Admin'><code event='defaultvalue'><formula>"[DBAdmin]"</formula></code></field></run></par><formregionend
+ type='body'/></richtext></body>
+<item name='Dt_DocDate' summary='false' sign='true'>
+<rawitemdata type='400'>
+AAAAAAAAAAA=
+</rawitemdata></item>
+<item name='Dt_DocTime' summary='false' sign='true'>
+<rawitemdata type='400'>
+AAAAAAAAAAA=
+</rawitemdata></item>
+<item name='Nb_DocNumber' summary='false' sign='true'><number>0</number></item>
+<item name='$FormUsers'><text>[admin]</text></item>
+<item name='$SubForm_RepIDs' sign='true'><text>0000000000000000</text></item>
+<item name='$$ScriptName' summary='false' sign='true'><text>$f-preferences</text></item>
+<item name='Td_Created' summary='false'>
+<rawitemdata type='400'>
+AAAAAAAAAAA=
+</rawitemdata></item>
+<item name='Td_LastModified' summary='false'>
+<rawitemdata type='400'>
+AAAAAAAAAAA=
+</rawitemdata></item></form>
+

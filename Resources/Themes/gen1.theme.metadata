@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="C12579FA00396CD6" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="15e" sequence="5" unid="FFC5EC06FFAA5311C12579F80042AF9A">
+<created><datetime dst="true">20120508T140823,30+02</datetime></created>
+<modified><datetime dst="true">20160401T145156,87+02</datetime></modified>
+<revised><datetime dst="true">20160401T145156,86+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160401T145156,87+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20120510T122714,70+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=CITC</name><name>CN=Mark Leusink/O=LinQed</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Marina Johansson/OU=0180/O=SANDVIK</name><name>CN=Magnus Olsson/OU=0180/O=SANDVIK</name><name>CN=Information Systems/O=SANDVIK</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+<item name="$Flags"><text>34567Cg~`</text></item>
+<item name="$TITLE" sign="true"><text>gen1.theme</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>gen1.theme</text></item>
+<item name="$CSSFiles"><text>/.ibmxspres/dojoroot/dijit/themes/claro/claro.css</text></item></note>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form name='Event' alias='$f-event' xmlns='http://www.lotus.com/dxl' version='9.0'
+ maintenanceversion='1.5' replicaid='C12579FA00396CD6' nocompose='true' publicaccess='false'
+ designerversion='8.5.3' renderpassthrough='true'>
+<noteinfo noteid='13a' unid='CE5D9F69D37149C3C12576DA002E98A1' sequence='30'>
+<created><datetime>20100302T092857,29+01</datetime></created>
+<modified><datetime dst='true'>20160403T191942,95+02</datetime></modified>
+<revised><datetime dst='true'>20160403T191942,94+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20160403T191942,95+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20120510T122714,52+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name
+>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+<body><richtext>
+<pardef id='1'/>
+<par def='1'><field type='text' kind='editable' name='Tx_Name'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='7' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><field type='datetime'
+ kind='editable' name='Dt_Date'><datetimeformat show='date' date='yearmonthday'
+ fourdigityearfor21stcentury='true' zone='never' dateformat='yearmonthdayweekday'
+ dayformat='twodigitday' monthformat='twodigitmonth' yearformat='fourdigityear'
+ weekdayformat='shortname' dateseparator1='-' dateseparator2='-' dateseparator3=' '
+ timeseparator=':' timeformat24='true' preference='usersetting'/></field><field
+ type='text' kind='editable' name='Tx_Location'/><compositedata type='98'
+ prevtype='65418' nexttype='222' afterparcount='18' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></richtext></body>
+<item name='$$ScriptName' summary='false' sign='true'><text>DemoForm</text></item></form>
+

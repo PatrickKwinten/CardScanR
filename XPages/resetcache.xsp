@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom" pageTitle="Reset Cache">
+	<xp:this.beforeRenderResponse><![CDATA[#{javascript:applicationScope.theme=null;
+applicationScope.logo=null;
+applicationScope.title=null;
+applicationScope.titlesub=null;
+applicationScope.footer=null;
+applicationScope.search=null;
+applicationScope.legal=null;
+applicationScope.legaltext=null;
+applicationScope.initLayout=null;
+initLayout.setInitScope();
+}]]></xp:this.beforeRenderResponse>
+	<xp:this.resources>
+		<xp:script src="/initLayout.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	<xc:ccAppLayout>
+		<xp:this.facets>
+			<xp:span xp:key="facetMiddle">
+ <xp:button value="Reset Cache" id="button1">
+ 	<xp:eventHandler event="onclick" submit="true"
+ 		refreshMode="complete">
+ 		<xp:this.action><![CDATA[#{javascript:applicationScope.theme=null;
+applicationScope.logo=null;
+applicationScope.title=null;
+applicationScope.titlesub=null;
+applicationScope.footer=null;
+applicationScope.search=null;
+applicationScope.legal=null;
+applicationScope.legaltext=null;
+applicationScope.initLayout=null;
+initLayout.setInitScope();}]]></xp:this.action>
+ 	</xp:eventHandler></xp:button>
+ 
+			</xp:span>
+		</xp:this.facets>
+	</xc:ccAppLayout>
+</xp:view>

@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='utf-8'?>
+<subform name='(Global: Document Footer)' alias='$sf-docfooter' xmlns='http://www.lotus.com/dxl'
+ version='9.0' maintenanceversion='1.5' replicaid='C12579FA00396CD6' hide='web mobile'
+ designerversion='8.5.2' comment='displayes simple document history'>
+<noteinfo noteid='1ae' unid='09872E228C6473A2C12576EE004C848B' sequence='23'>
+<created><datetime>20100322T145546,67+01</datetime></created>
+<modified><datetime dst='true'>20160403T191943,79+02</datetime></modified>
+<revised><datetime dst='true'>20160403T191943,78+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20160403T191943,79+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20120510T122715,10+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name
+>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+<body><richtext>
+<pardef id='1'><code event='hidewhen'><formula>1</formula></code></pardef>
+<par def='1'><run><font size='8pt' style='bold' name='multilingual' color='green'/>Field description:</run></par>
+<par def='1'><run><font size='8pt' name='multilingual' color='green'/>E = Editable, C = Computed, CWC = Computed when composed, CFD = Computed for display</run></par>
+<par def='1'><run><font size='8pt' name='multilingual' color='green'/>Coloring: </run><run
+><font size='8pt' name='multilingual' color='fuchsia'/>CGI Variable</run><run
+><font size='8pt' name='multilingual' color='green'/>, </run><run><font size='8pt'
+ name='multilingual' color='red'/>Normal hidden Field</run><run><font size='8pt'
+ name='multilingual' color='green'/>, </run><run><font size='8pt' name='multilingual'
+ color='maroon'/>Authors/Readers</run></par>
+<table widthtype='fitmargins' cellbordercolor='silver' rightmargin='7.5000in'
+ refwidth='6.4889in'><tablecolumn width='5.9931%'/><tablecolumn width='47.0035%'/><tablecolumn
+ width='47.0035%'/>
+<tablerow>
+<tablecell>
+<pardef id='3' keepwithnext='true' keeptogether='true'><code event='hidewhen'><formula
+>1</formula></code></pardef>
+<par def='3'><run><font size='8pt' name='multilingual' color='green'/>CWC</run></par></tablecell>
+<tablecell>
+<pardef id='4' keepwithnext='true' keeptogether='true'><code event='hidewhen'><formula
+>1</formula></code></pardef>
+<par def='4'><run><font size='8pt' name='multilingual' color='red'/></run><run
+><font size='8pt' color='red' name='multilingual'/><field type='datetime'
+ kind='computedwhencomposed' name='Td_Created'><datetimeformat show='datetime'
+ date='yearmonthday' time='hourminutesecond' zone='never'/><code event='defaultvalue'><formula
+>@Now</formula></code></field></run><run><font size='8pt' name='multilingual'
+ color='red'/></run></par></tablecell>
+<tablecell>
+<pardef id='5' keepwithnext='true' keeptogether='true'><code event='hidewhen'><formula
+>1</formula></code></pardef>
+<par def='5'><run><font size='8pt' name='multilingual' color='gray'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='8pt' name='multilingual' color='green'/>C</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='8pt' name='multilingual' color='red'/></run><run
+><font size='8pt' color='red' name='multilingual'/><field type='datetime'
+ kind='computed' name='Td_LastModified'><datetimeformat show='datetime' date='yearmonthday'
+ time='hourminutesecond' zone='never'/><code event='defaultvalue'><formula
+>@If( @IsDocBeingSaved; @Now; @IsNewDoc; ""; Td_LastModified )</formula></code></field></run><run
+><font size='8pt' name='multilingual' color='red'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='8pt' name='multilingual'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='8pt' name='multilingual' color='green'/>CWC</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='8pt' name='multilingual' color='red'/></run><run
+><font size='8pt' color='red' name='multilingual'/><field type='names' kind='computedwhencomposed'
+ name='Na_Author'><code event='defaultvalue'><formula>@UserName</formula></code></field></run><run
+><font size='8pt' name='multilingual' color='red'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='8pt' name='multilingual'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'><run><font size='8pt' name='multilingual' color='green'/>C</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='8pt' name='multilingual' color='red'/></run><run
+><font size='8pt' color='red' name='multilingual'/><field type='names' kind='computed'
+ name='Na_LastEditor'><code event='defaultvalue'><formula>@If( @IsDocBeingSaved; @UserName; @IsNewDoc; ""; Na_LastEditor )</formula></code></field></run><run
+><font size='8pt' name='multilingual' color='red'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='8pt' name='multilingual'/></run></par></tablecell></tablerow></table>
+<pardef id='6' leftmargin='1in'><code event='hidewhen'><formula>1</formula></code></pardef>
+<par def='6'><run><font size='9pt' name='multilingual' color='green'/>&lt;!-- hidden --&gt;</run></par>
+<table cellbordercolor='silver' rightmargin='100%' widthtype='fixedleft' rowspacing='0.0396in'
+ columnspacing='0.0396in' refwidth='6.8910in'><border style='image' width='1px'><imageref
+ name='table-roundborder-gray.gif'/></border><tablecolumn width='1.3389in'/><tablecolumn
+ width='5.3938in'/>
+<tablerow>
+<tablecell colorstyle='vgradient' valign='center' borderwidth='0px 1px 0px 0px'
+ bgcolor='white' altbgcolor='#efefef'>
+<cellbackground repeat='resize'><imageref name='DocHeader.gif'/></cellbackground>
+<pardef id='8' align='center' leftmargin='1%' spacebefore='1.5' spaceafter='1.5'
+ keepwithnext='true' keeptogether='true'/>
+<par def='8'><run><font size='8pt' style='bold' name='multilingual'/>Document Information</run></par></tablecell>
+<tablecell colorstyle='vgradient' valign='center' borderwidth='0px 0px 0px 1px'
+ bgcolor='white' altbgcolor='#efefef'>
+<pardef id='9' leftmargin='0.1000in' keepwithnext='true' keeptogether='true'><code
+ event='hidewhen'><formula>1</formula></code></pardef>
+<par def='9'><run><font size='9pt' name='multilingual' color='green'/>&lt;!-- hidden --&gt;</run></par>
+<table widthtype='fitmargins' leftmargin='0%' refwidth='5.3833in'><tablecolumn
+ width='10.9896%'/><tablecolumn width='37.4097%'/><tablecolumn width='13.2083%'/><tablecolumn
+ width='38.3924%'/>
+<tablerow>
+<tablecell borderwidth='0px'>
+<pardef id='11' leftmargin='0.0104in' keepwithnext='true' keeptogether='true'/>
+<par def='11'><run><font size='8pt' name='multilingual' color='#4f4f4f'/>Created:</run></par></tablecell>
+<tablecell columnspan='3' borderwidth='0px'>
+<pardef id='14' leftmargin='0.0104in' keepwithnext='true' keeptogether='true'/>
+<par def='14'><run><font size='8pt' name='multilingual' color='#4f4f4f'/></run><run
+><font size='8pt' color='#4f4f4f' name='multilingual'/><field type='datetime'
+ kind='computedfordisplay' name='Cd_ShowCreated'><datetimeformat show='datetime'
+ date='yearmonthday' time='hourminute' zone='never'/><code event='defaultvalue'><formula
+>Td_Created</formula></code></field></run><run><font size='8pt' name='multilingual'
+ color='#4f4f4f'/> by </run><run><font size='8pt' color='#4f4f4f' name='multilingual'/><field
+ lookupeachchar='false' lookupaddressonrefresh='false' type='names' kind='computedfordisplay'
+ name='Cd_ShowAuthor'><code event='defaultvalue'><formula>@Name([Abbreviate]; Na_Author )</formula></code></field></run><run
+><font size='8pt' name='multilingual' color='#4f4f4f'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell borderwidth='0px'>
+<pardef id='15' leftmargin='0.0104in' keepwithnext='true' keeptogether='true'><code
+ event='hidewhen'><formula>@IsNewDoc</formula></code></pardef>
+<par def='15'><run><font size='8pt' name='multilingual' color='#4f4f4f'/>Edited:</run></par></tablecell>
+<tablecell columnspan='3' borderwidth='0px'>
+<pardef id='16' leftmargin='0.0104in' keepwithnext='true' keeptogether='true'><code
+ event='hidewhen'><formula>@IsNewDoc</formula></code></pardef>
+<par def='16'><run><font size='8pt' name='multilingual' color='#4f4f4f'/></run><run
+><font size='8pt' color='#4f4f4f' name='multilingual'/><field type='datetime'
+ kind='computedfordisplay' name='Cd_ShowModified'><datetimeformat show='datetime'
+ date='yearmonthday' time='hourminute' zone='never'/><code event='defaultvalue'><formula
+>Td_LastModified</formula></code></field></run><run><font size='8pt' name='multilingual'
+ color='#4f4f4f'/> by </run><run><font size='8pt' color='#4f4f4f' name='multilingual'/><field
+ lookupeachchar='false' lookupaddressonrefresh='false' type='names' kind='computedfordisplay'
+ name='Cd_ShowLastEditor'><code event='defaultvalue'><formula>@Name([Abbreviate]; Na_LastEditor )</formula></code></field></run><run
+><font size='8pt' name='multilingual' color='#4f4f4f'/></run></par></tablecell></tablerow></table>
+<par def='9'><run><font size='9pt' name='multilingual' color='green'/>&lt;!-- hidden --&gt;</run></par></tablecell></tablerow></table>
+<par def='6'><run><font size='9pt' name='multilingual' color='green'/>&lt;!-- hidden --&gt;</run></par></richtext></body>
+<item name='Td_CreatedDate' summary='false' sign='true'>
+<rawitemdata type='400'>
+AAAAAAAAAAA=
+</rawitemdata></item>
+<item name='$$ScriptName' summary='false' sign='true'><text>$sf-docfooter</text></item></subform>
+

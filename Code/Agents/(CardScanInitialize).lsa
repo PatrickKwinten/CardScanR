@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='utf-8'?>
+<agent name='(CardScanInitialize)' xmlns='http://www.lotus.com/dxl' version='9.0'
+ maintenanceversion='1.5' replicaid='C12579FA00396CD6' hide='v3' runaswebuser='true'
+ publicaccess='false' designerversion='8.5.2' restrictions='unrestricted'>
+<noteinfo noteid='242' unid='D6B3223FAA22219CC12578ED004C7933' sequence='21'>
+<created><datetime dst='true'>20110815T155517,63+02</datetime></created>
+<modified><datetime dst='true'>20160403T191943,75+02</datetime></modified>
+<revised><datetime dst='true'>20160403T191943,74+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20160403T191943,75+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20120510T122715,82+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name
+>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+<designchange><datetime dst='true'>20160403T191942,63+02</datetime></designchange>
+<trigger type='agentlist'/>
+<documentset type='runonce'/><code event='options'><lotusscript>%REM
+	Agent Preferences
+	Created Nov 2, 2010 by Patrick Kwinten
+	Description: Comments for Agent
+%END REM
+Option Public
+Use "CardScan"
+
+
+</lotusscript></code><code event='declarations'><lotusscript>Dim apCardScanFields(30) As String
+Dim apCardScanData(30) As String
+Dim profiledoc As notesdocument
+
+
+</lotusscript></code><code event='initialize'><lotusscript>Sub Initialize
+	Dim session As New NotesSession
+	Dim db As NotesDatabase	
+	Dim doc As NotesDocument
+	Dim szTmp As String
+	Dim nField As Integer
+	Dim szCookie As String	
+	
+	Set db = session.currentdatabase	
+	Set doc = session.DocumentContext	
+	
+	szTmp = UnEscape(doc.HTTP_Cookie(0))
+	nBegin = Instr(szTmp, "Device=") + Len("Device=")
+	cDevice = Mid(szTmp, nBegin, 1)
+	
+	Call readcardscanner(session, db, doc, szTmp)	
+	
+End Sub
+
+
+</lotusscript></code><code event='readcardscanner'><lotusscript>Sub readcardscanner(session As NotesSession, db As NotesDatabase, doc As NotesDocument, szTmp As String)
+	Dim iRtn As Integer	
+	Dim lphRTK As Long
+	Dim lpdwMajor As Long, lpdwMinor As Long	
+	On Error Resume Next	
+	apCardScanFields(0)  = CRTK_FIELD_NAME
+	apCardScanFields(1)  = CRTK_FIELD_NAME_PREFIX
+	apCardScanFields(2)  = CRTK_FIELD_FIRST_NAME
+	apCardScanFields(3)  = CRTK_FIELD_MIDDLE_NAME
+	apCardScanFields(4)  = CRTK_FIELD_LAST_NAME
+	apCardScanFields(5)  = CRTK_FIELD_NAME_SUFFIX	
+	apCardScanFields(6)  = CRTK_FIELD_TITLE
+	apCardScanFields(7)  = CRTK_FIELD_COMPANY	
+	apCardScanFields(8)  = CRTK_FIELD_ADDRESS
+	apCardScanFields(9)  = CRTK_FIELD_STREET
+	apCardScanFields(10) = CRTK_FIELD_ADDR1
+	apCardScanFields(11) = CRTK_FIELD_ADDR2
+	apCardScanFields(12) = CRTK_FIELD_ADDR3
+	apCardScanFields(13) = CRTK_FIELD_CITY
+	apCardScanFields(14) = CRTK_FIELD_STATE
+	apCardScanFields(15) = CRTK_FIELD_POSTAL_CODE
+	apCardScanFields(16) = CRTK_FIELD_COUNTRY	
+	apCardScanFields(17) = CRTK_FIELD_2ND_ADDRESS
+	apCardScanFields(18) = CRTK_FIELD_2ND_STREET
+	apCardScanFields(19) = CRTK_FIELD_2ND_ADDR1
+	apCardScanFields(20) = CRTK_FIELD_2ND_ADDR2
+	apCardScanFields(21) = CRTK_FIELD_2ND_ADDR3
+	apCardScanFields(22) = CRTK_FIELD_2ND_CITY
+	apCardScanFields(23) = CRTK_FIELD_2ND_STATE
+	apCardScanFields(24) = CRTK_FIELD_2ND_POSTAL_CODE
+	apCardScanFields(25) = CRTK_FIELD_2ND_COUNTRY	
+	apCardScanFields(26) = CRTK_FIELD_PHONE
+	apCardScanFields(27) = CRTK_FIELD_FAX 
+	apCardScanFields(28) = CRTK_FIELD_EMAIL
+	apCardScanFields(29) = CRTK_FIELD_WEB_SITE
+	apCardScanFields(30) = CRTK_FIELD_OTHER	
+	
+	iRtn = CRTK_Init(lphRTK)
+	If iRtn &lt;&gt; CRTK_SUCCESS Then
+		doc.Tx_ReqMessage = "Unable to initialize / obtain a session with the CardScan device."
+		Exit Sub 
+	End If	
+	
+	iRtn = CRTK_GetVersion(lpdwMajor, lpdwMinor)
+	If iRtn &lt;&gt; CRTK_SUCCESS Then
+		doc.Tx_ReqMessage = "Unable to obtain a version of the CardScan device."
+		GoTo lExit
+	End If	
+	
+	If lpdwMajor &lt;&gt; CRTK_API_MAJOR_VERSION Then
+		doc.Tx_ReqMessage = "This program is not tested and configured for version " &amp; lpdwMajor &amp; "." &amp; lpdwMinor
+		GoTo lExit
+	End If
+	
+	If iRtn &lt;&gt; CRTK_SUCCESS Then
+		doc.Tx_ReqMessage = "Configure terminated with an error: " &amp; iRtn
+		GoTo lExit
+	End If
+	
+	iRtn = CRTK_ScanCheckForCard(lphRTK)	
+	If iRtn = CRTK_NO Then
+		doc.Tx_ReqMessage = "No card available in scanner, you can scan a card again."
+		GoTo lExit
+	End If
+	
+	If iRtn = CRTK_YES Then
+		iRtn = CRTK_ScanAcquire(lphRTK, 50)	
+		If iRtn &lt;&gt; CRTK_SUCCESS Then
+			doc.Tx_ReqMessage = "An error occured when retrieving card: " &amp; iRtn
+			GoTo lExit
+		End If
+		
+		iRtn = CRTK_ImageConvert(lphRTK, 0, 0) 
+		If iRtn &lt;&gt; CRTK_SUCCESS Then
+			doc.Tx_ReqMessage = "Error converting card into OCR recognition..(ImageConvert)"
+			GoTo lExit
+		End If
+		
+		iRtn = CRTK_Recognize(lphRTK, 0, 0) 
+		If iRtn &lt;&gt; CRTK_SUCCESS Then
+			doc.Tx_ReqMessage = "Error converting card into OCR recognition..(Recognize)"
+			GoTo lExit
+		End If
+		
+		Dim Length As Long
+		Dim szContent As String * 256
+		For nLoop = 0 To 30
+			Length =  256
+			szContent = "" 
+			iRtn = CRTK_GetText(lphRTK,  apCardScanFields(nLoop), szContent, Length)			
+			If Length = 256 And (Left(szContent, 5) = "     ") Then
+				apCardScanData(nLoop) = ""
+			Else
+				apCardScanData(nLoop) = Left(szContent, Length)
+			End If			
+		Next
+		
+		doc.Tx_ReqFirstName = apCardScanData(2)
+		If apCardScanData(3) &lt;&gt; "" Then
+			doc.Tx_Firstname = doc.Tx_Firstname(0) + " " + apCardScanData(3)
+		End If
+		
+		doc.Tx_Name = apCardScanData(0)
+		doc.Tx_Prefix = apCardScanData(1)
+		doc.Tx_Firstname = apCardScanData(2)
+		doc.Tx_Middlename = apCardScanData(3)
+		
+		doc.Tx_Lastname = apCardScanData(4)
+		doc.Tx_Suffix = apCardScanData(5)
+		doc.Tx_Title = apCardScanData(6)
+		
+		doc.Tx_Company = apCardScanData(7)
+		doc.Tx_Address = apCardScanData(8)
+		doc.Tx_Street = apCardScanData(9)
+		
+		doc.Tx_Addr1 = apCardScanData(10)
+		doc.Tx_Addr2 = apCardScanData(11)
+		doc.Tx_Addr3 = apCardScanData(12)
+		
+		doc.Tx_City = apCardScanData(13)
+		doc.Tx_State  = apCardScanData(14)	
+		doc.Tx_PostalCode = apCardScanData(15)		
+		doc.Tx_Country = apCardScanData(16)
+		
+		doc.Tx_Tel = apCardScanData(26)
+		doc.Tx_Fax = apCardScanData(27)		
+		doc.Tx_Email  = apCardScanData(28)				
+		doc.Tx_Website  = apCardScanData(29)		
+		
+		doc.Tx_Other  = apCardScanData(30)		
+
+		
+	'**** capture the image******
+		
+		
+		iRtn = CRTK_ImageExport(lphRTK, "BMP","c:\temp\card.BMP") 
+		If iRtn &lt;&gt; CRTK_SUCCESS Then
+			doc.Tx_ReqMessage = "Unable to capter the busniess card."	
+		End If
+	End If
+	
+lExit:	
+	iRtn = CRTK_Term(lphRTK)	
+	If iRtn &lt;&gt; CRTK_SUCCESS Then
+		doc.Tx_ReqMessage = "Unable to terminate session with CardScan device."	
+	End If
+End Sub
+
+</lotusscript></code><code event='UnEscape'><lotusscript>Function UnEscape(s) As String
+	Done=False
+	i=1
+	While Not Done
+		c=Mid(s,i,1)
+		If c="%" Then
+			If Mid(s,i+1,1) = "u" Then
+				c=Uchr("&amp;h"+Mid(s,i+2,4))
+				i=i+6
+			Else
+				c=Chr("&amp;h"+Mid(s,i+1,2))
+				i=i+3
+			End If
+		Else
+			i=i+1
+		End If
+		t=t+c
+		Done=i&gt;Len(s)
+	Wend
+	UnEscape=t
+End Function </lotusscript></code>
+<rundata processeddocs='0' exitcode='0'>
+<agentmodified><datetime dst='true'>20110831T125450,12+02</datetime></agentmodified></rundata>
+<item name='$POID'><datetime dst='true'>20090622T141405,23+02</datetime></item></agent>
+

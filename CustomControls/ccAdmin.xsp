@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.data>
+		<xp:dominoView var="viewEvents" viewName="$v-events"></xp:dominoView>
+		<xp:dominoDocument var="docPreferences"
+			formName="$f-preferences" action="editDocument">
+			<xp:this.documentId><![CDATA[#{javascript:var prefView:NotesView = database.getView("$v-preferences");
+if (prefView != null){
+	var prefDoc:NotesDocument = prefView.getFirstDocument();
+	if (prefDoc != null){
+		return prefDoc.getUniversalID();
+	}
+}}]]></xp:this.documentId>
+		</xp:dominoDocument>
+		<xp:dominoView var="viewContacts" viewName="$v-contacts">
+			<xp:this.categoryFilter><![CDATA[#{javascript:var eventID = viewScope.get("eventFilter");
+if (eventID ==""|| eventID ==null){
+	//return "No event selected";
+	//get first 
+	var v:NotesView = database.getView("$v-eventsbyID");
+	var doc:NotesDocument = v.getFirstDocument();
+	if (doc != null) {
+		return doc.getUniversalID()
+	}
+	
+}
+else{
+	var v:NotesView = database.getView("$v-eventsbyID");
+	var doc:NotesDocument = v.getDocumentByKey(eventID);
+	if (doc != null) {
+		return doc.getUniversalID();
+	}
+}
+}]]></xp:this.categoryFilter>
+		</xp:dominoView>
+	</xp:this.data>
+	<xp:this.resources>
+		<xp:script src="/initLayout.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	<xe:formTable id="formTable2" formTitle="Administration"
+		formDescription="Enter the security-code to verify you have administrator priviliges..."
+		style="margin:0 0 10px 0;">
+		<xp:this.facets>
+			<xp:panel xp:key="footer">
+				<xp:button value="Verify me" id="button2"
+					styleClass="lotusBtn lotusBtnSpecial" xp:key="footer">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="partial" refreshId="panelAdminOptions">
+						<xp:this.action><![CDATA[#{javascript:var password = getComponent("inputPassword").getValue();
+if(password =="dominofun"){
+	viewScope.isAdmin = "true";
+}
+else{
+	viewScope.isAdmin = "false";
+	
+}}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+			</xp:panel>
+		</xp:this.facets>
+		<xe:formRow id="formRow8" label="Code:" labelPosition="left">
+			<xp:inputText id="inputPassword" password="true"
+				style="margin-right:10px;">
+			</xp:inputText>
+		</xe:formRow>
+	</xe:formTable>
+
+
+
+
+	<xp:panel id="panelAdminOptions">
+		<xp:panel id="panelIsAdmin">
+			<xp:this.rendered><![CDATA[#{javascript:code = viewScope.get("isAdmin");
+
+if (code == "true"){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.rendered>
+			<xp:tabbedPanel id="tabbedPanel1">
+				<xp:tabPanel label="Contacts" id="tabPanel4"
+					style="padding-left:10px;padding-right:10px">
+					<xp:panel>
+
+						<xp:table xp:key="FilterControl"
+							styleClass="lotusSort">
+							<xp:tr>
+								<xp:td>Filter:</xp:td>
+								<xp:td>
+									<xp:comboBox id="filterBox">
+
+
+										<xp:this.defaultValue><![CDATA[#{javascript:return "Select an event";}]]></xp:this.defaultValue>
+										<xp:selectItem
+											itemLabel="Select an event" id="selectItem33">
+										</xp:selectItem>
+										<xp:selectItems
+											id="selectItems1">
+											<xp:this.value><![CDATA[#{javascript:@DbColumn("","$lu-events",1)}]]></xp:this.value>
+										</xp:selectItems>
+
+
+										<xp:eventHandler
+											event="onchange" submit="true" refreshMode="partial"
+											refreshId="resultPanel" id="eventHandler8">
+											<xp:this.action><![CDATA[#{javascript:var filter = getComponent("filterBox").getValue();
+
+var locView:NotesView = database.getView("$lu-events");
+var locDoc:NotesDocument = locView.getDocumentByKey(filter);
+if (locDoc != null){
+	var locDocID = locDoc.getUniversalID();
+	viewScope["eventFilter"] = locDocID;
+}
+else{
+	viewScope["eventFilter"] = "";
+}
+}]]></xp:this.action>
+										</xp:eventHandler>
+
+									</xp:comboBox>
+
+								</xp:td>
+							</xp:tr>
+						</xp:table>
+					</xp:panel>
+
+					<xp:panel id="resultPanel">
+
+						<xp:repeat id="vwRepeater" rows="15"
+							value="#{viewContacts}" var="rowdata" indexVar="rowindex">
+							<xp:table style="width:100.0%"
+								cellpadding="0" cellspacing="0" styleClass="lotusTable">
+								<xp:tr>
+									<xp:td style="width:32px">
+
+										<xp:image url="thumbNoPhoto.png"
+											id="image2">
+										</xp:image>
+									</xp:td>
+									<xp:td>
+
+										<xp:link escape="true"
+											id="link1">
+											<xp:this.text><![CDATA[#{javascript:try {
+	var prefView:NotesView = database.getView("$v-preferences");
+	if (prefView != null){
+		var prefDoc:NotesDocument = prefView.getFirstDocument();
+		if (prefDoc != null){
+			if (prefDoc.hasItem("Tx_ConfigScanFields")) {
+				var fields = prefDoc.getItemValue("Tx_ConfigScanFields");
+			}
+		}
+	}
+}
+catch(e) {
+	var fields = "";
+}
+
+if (fields[0] =="lastname"){
+	rowdata.getDocument().getItemValueString("Tx_LastName");
+}
+else{
+	rowdata.getDocument().getUniversalID();
+}}]]></xp:this.text>
+											<xp:eventHandler
+												event="onclick" submit="true" refreshMode="complete"
+												id="eventHandler9">
+												<xp:this.action>
+													<xp:openPage
+														name="/contact.xsp" target="openDocument"
+														documentId="#{javascript:rowdata.getDocument().getUniversalID();}">
+													</xp:openPage>
+												</xp:this.action>
+											</xp:eventHandler>
+										</xp:link>
+									</xp:td>
+								</xp:tr>
+							</xp:table>
+						</xp:repeat>
+						<xp:pager layout="Previous Group Next"
+							id="pager1" for="vwRepeater" styleClass="lotusPaging"
+							partialRefresh="true">
+						</xp:pager>
+					</xp:panel>
+
+				</xp:tabPanel>
+				<xp:tabPanel label="Events" id="tabPanel1"
+					style="padding-left:10px;padding-right:10px">
+					<xp:panel>
+						<xp:button id="button3" value="Add Event"
+							styleClass="lotusBtn lotusBtnSpecial" style="margin:10px 0px;">
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="complete" id="eventHandler1">
+								<xp:this.action>
+									<xp:openPage name="/event.xsp"
+										target="newDocument">
+									</xp:openPage>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+						<xp:repeat id="repeatEventsView" rows="30"
+							value="#{viewEvents}" var="rowdata" indexVar="rowindex">
+
+							<xp:panel>
+								<xp:table
+									styleClass="lotusTable lotusClear" border="0" cellpadding="0"
+									cellspacing="0">
+									<xp:tr>
+										<xp:td>
+											<xp:panel>
+												<h4>
+													<xp:text
+														escape="true" id="eventName">
+														<xp:this.value><![CDATA[#{javascript:rowdata.getColumnValue("Tx_Name").toString()}]]></xp:this.value>
+													</xp:text>
+												</h4>
+												<xp:panel>
+													<xp:span
+														style="margin-right:10px;">
+														<xp:text
+															escape="true" id="eventDate" styleClass="lotusMeta">
+															<xp:this.converter>
+																<xp:convertDateTime
+																	type="date">
+																</xp:convertDateTime>
+															</xp:this.converter>
+															<xp:this.value><![CDATA[#{javascript:eventDate = rowdata.getColumnValue("Dt_Date").toString();
+
+var dt:NotesDateTime = session.createDateTime(eventDate);
+
+return dt.getDateOnly();}]]></xp:this.value>
+														</xp:text>
+													</xp:span>
+													<xp:button
+														value="Activate" id="buttonActivate"
+														styleClass="lotusBtn LotusSpecial"
+														style="width:80px;margin-right:10px;">
+														<xp:this.rendered><![CDATA[#{javascript:var activeEventID = sessionScope.get("tmpEventID");
+
+var thisEventID = rowdata.getDocument().getUniversalID();
+
+if (activeEventID  == thisEventID){
+	return false;
+}
+else{
+	return true;
+}}]]></xp:this.rendered>
+														<xp:eventHandler
+															event="onclick" submit="true" refreshMode="partial"
+															refreshId="repeatEventsView" id="eventHandler2">
+															<xp:this.action><![CDATA[#{javascript:eventName = rowdata.getColumnValue("Reference").toString();
+
+sessionScope.put("tmpEventID", eventName);}]]></xp:this.action>
+														</xp:eventHandler>
+													</xp:button>
+
+
+
+													<xp:button
+														value="De-Activate" id="buttonDeActivate"
+														styleClass="lotusBtn lotusBtnSpecial"
+														style="width:80px;margin-right:10px;">
+														<xp:this.rendered><![CDATA[#{javascript:var activeEventID = sessionScope.get("tmpEventID");
+
+var thisEventID = rowdata.getDocument().getUniversalID();
+
+if (activeEventID  != thisEventID){
+	return false;
+}
+else{
+	return true;
+}}]]></xp:this.rendered>
+														<xp:eventHandler
+															event="onclick" submit="true" refreshMode="partial"
+															refreshId="repeatEventsView" id="eventHandler3">
+															<xp:this.action><![CDATA[#{javascript:sessionScope.put("tmpEventID", "");}]]></xp:this.action>
+														</xp:eventHandler>
+													</xp:button>
+													<xp:span>
+														<xp:text
+															escape="true" id="eventLocation">
+															<xp:this.value><![CDATA[#{javascript:rowdata.getColumnValue("Tx_Location").toString()}]]></xp:this.value>
+														</xp:text>
+
+													</xp:span>
+
+
+
+
+												</xp:panel>
+
+
+
+											</xp:panel>
+
+										</xp:td>
+
+
+
+									</xp:tr>
+
+								</xp:table>
+							</xp:panel>
+						</xp:repeat>
+
+						<xp:panel>
+
+							<xp:pager layout="Previous Group Next"
+								id="pagerEvents" for="repeatEventsView"
+								styleClass="lotusPaging">
+							</xp:pager>
+						</xp:panel>
+					</xp:panel>
+				</xp:tabPanel>
+				<xp:tabPanel label="Scan Options" id="tabPanel2"
+					style="padding-left:10px;padding-right:10px">
+					<xp:table>
+						<xp:tr>
+							<xp:td align="left" valign="top">
+								<xe:widgetContainer
+									id="widgetContainer1" titleBarText="Available fields">
+									<xp:panel styleClass="lotusMeta"
+										style="font-size:0.9em;">
+										Display ONLY&#160;the following
+										fields in the scan dialog:
+									</xp:panel>
+									<xp:checkBoxGroup id="cbScanFields"
+										layout="pageDirection"
+										value="#{docPreferences.Tx_ConfigScanFields}">
+										<xp:selectItem
+											itemLabel="Lastname" itemValue="lastname" id="selectItem1">
+										</xp:selectItem>
+										<xp:selectItem
+											itemLabel="Firstname" itemValue="firstname"
+											id="selectItem2">
+										</xp:selectItem>
+										<xp:selectItem
+											itemLabel="Prefix" itemValue="prefix" id="selectItem3">
+										</xp:selectItem>
+										<xp:selectItem itemLabel="Title"
+											itemValue="title" id="selectItem4">
+										</xp:selectItem>
+										<xp:selectItem
+											itemLabel="Suffix" itemValue="suffix" id="selectItem5">
+										</xp:selectItem>
+										<xp:selectItem
+											itemLabel="Middlename" itemValue="middlename"
+											id="selectItem6">
+										</xp:selectItem>
+										<xp:selectItem itemLabel="Name"
+											itemValue="name" id="selectItem7">
+										</xp:selectItem>
+										<xp:selectItem
+											itemLabel="Company" itemValue="company" id="selectItem8">
+										</xp:selectItem>
+										<xp:selectItem
+											itemLabel="Address" itemValue="address" id="selectItem9">
+										</xp:selectItem>
+										<xp:selectItem
+											itemLabel="Street" itemValue="street" id="selectItem10">
+										</xp:selectItem>
+										<xp:selectItem itemLabel="Addr1"
+											itemValue="addr1" id="selectItem11">
+										</xp:selectItem>
+										<xp:selectItem itemLabel="Addr2"
+											itemValue="addr2" id="selectItem12">
+										</xp:selectItem>
+										<xp:selectItem itemLabel="Addr3"
+											itemValue="addr3" id="selectItem13">
+										</xp:selectItem>
+										<xp:selectItem itemLabel="City"
+											itemValue="city" id="selectItem14">
+										</xp:selectItem>
+										<xp:selectItem itemLabel="State"
+											itemValue="state" id="selectItem15">
+										</xp:selectItem>
+										<xp:selectItem
+											itemLabel="Postal Code" itemValue="postalcode"
+											id="selectItem16">
+										</xp:selectItem>
+										<xp:selectItem
+											itemLabel="Country" itemValue="country" id="selectItem17">
+										</xp:selectItem>
+										<xp:selectItem
+											itemLabel="Telephone" itemValue="telephone"
+											id="selectItem18">
+										</xp:selectItem>
+										<xp:selectItem itemLabel="Fax"
+											itemValue="fax" id="selectItem19">
+										</xp:selectItem>
+										<xp:selectItem itemLabel="Email"
+											itemValue="email" id="selectItem20">
+										</xp:selectItem>
+										<xp:selectItem
+											itemLabel="Website" itemValue="website" id="selectItem21">
+										</xp:selectItem>
+										<xp:selectItem itemLabel="Other"
+											itemValue="other" id="selectItem22">
+										</xp:selectItem>
+										<xp:eventHandler event="onclick"
+											submit="true" refreshMode="partial"
+											refreshId="cbRequiredFields" id="eventHandler10">
+										</xp:eventHandler>
+									</xp:checkBoxGroup>
+
+
+
+
+
+								</xe:widgetContainer>
+							</xp:td>
+							<xp:td align="left" valign="top">
+								<xe:widgetContainer
+									id="widgetContainer2" titleBarText="Required fields"
+									style="margin-left:20px;">
+									<xp:panel styleClass="lotusMeta"
+										style="font-size:0.9em;">
+										These fields require input:
+									</xp:panel>
+									<xp:checkBoxGroup
+										id="cbRequiredFields" layout="pageDirection"
+										value="#{docPreferences.Tx_ConfigRequiredFields}">
+										<xp:selectItems
+											id="selectItems2">
+											<xp:this.value><![CDATA[#{javascript:var filter = getComponent("cbScanFields").getValue();
+return @ProperCase(filter)}]]></xp:this.value>
+										</xp:selectItems>
+									</xp:checkBoxGroup>
+								</xe:widgetContainer>
+							</xp:td>
+							<xp:td align="left" valign="top">
+								<xp:button value="Save" id="button4"
+									styleClass="lotusBtn" style="margin-left:20px">
+									<xp:eventHandler event="onclick"
+										submit="true" refreshMode="complete" id="eventHandler4">
+										<xp:this.action>
+											<xp:saveDocument></xp:saveDocument>
+										</xp:this.action>
+									</xp:eventHandler>
+								</xp:button>
+							</xp:td>
+						</xp:tr>
+					</xp:table>
+
+				</xp:tabPanel>
+				<xp:tabPanel label="Application" id="tabPanel3"
+					style="padding-left:10px;padding-right:10px">
+					<xp:panel id="pnlRowLegaltext">
+						<xe:formTable id="formTable1"
+							formTitle="Configuration"
+							formDescription="Modify application settings..."
+							labelPosition="left">
+							<xp:this.facets>
+								<xp:panel xp:key="footer">
+									<xp:button value="Save" id="button1"
+										styleClass="lotusBtn lotusBtnSpecial"
+										style="margin-top:20px">
+
+										<xp:eventHandler event="onclick"
+											submit="true" refreshMode="norefresh" id="eventHandler6">
+											<xp:this.action>
+
+												<xp:actionGroup>
+													<xp:saveDocument></xp:saveDocument>
+
+
+
+
+
+
+
+
+
+
+
+													<xp:executeScript
+														script="#{javascript:initLayout.setInitScope();}">
+
+													</xp:executeScript>
+													<xp:openPage
+														name="/admin.xsp">
+													</xp:openPage>
+
+												</xp:actionGroup>
+											</xp:this.action>
+										</xp:eventHandler>
+									</xp:button>
+								</xp:panel>
+							</xp:this.facets>
+							<xe:formRow id="formRow1" for="inputTitle"
+								label="Title:">
+								<xp:inputText id="inputTitle"
+									value="#{docPreferences.Tx_PrefTitle}">
+									<xp:this.defaultValue><![CDATA[#{javascript:sessionScope.get("titlebarTitle")}]]></xp:this.defaultValue>
+								</xp:inputText>
+							</xe:formRow>
+							<xe:formRow id="formRow9"
+								label="Sub Title:">
+								<xp:inputText id="inputText1"
+									value="#{docPreferences.Tx_PrefTitleSub}">
+									<xp:this.defaultValue><![CDATA[#{javascript:sessionScope.get("titlebarTitle")}]]></xp:this.defaultValue>
+								</xp:inputText>
+							</xe:formRow>
+							<xe:formRow id="formRow2" label="Logo:"
+								for="logoTypes">
+								<xp:comboBox id="logoTypes"
+									value="#{docPreferences.Tx_Logotypes}">
+									<xp:selectItem itemLabel="No Logo"
+										id="selectItem27">
+									</xp:selectItem>
+									<xp:selectItem itemLabel="OpenNTF"
+										itemValue="logoOpenNTF" id="selectItem28">
+									</xp:selectItem>
+									<xp:selectItem itemLabel="CardScan"
+										itemValue="logoCardscan" id="selectItem29">
+									</xp:selectItem>
+									<xp:selectItem itemLabel="IBM"
+										itemValue="logoIBM" id="selectItem30">
+									</xp:selectItem>
+									<xp:eventHandler event="onchange"
+										submit="true" refreshMode="partial" refreshId="logoExample"
+										id="eventHandler7">
+									</xp:eventHandler>
+									<xp:selectItem itemLabel="Your Logo"
+										itemValue="logoYours">
+									</xp:selectItem>
+								</xp:comboBox>
+							</xe:formRow>
+							<xe:formRow id="formRow3"
+								label="Example:">
+								<xp:panel id="logoExample">
+									<xp:image id="image1">
+										<xp:this.url><![CDATA[#{javascript:var img = getComponent("logoTypes").getValue();
+if (img === "No Logo"){
+	return "./blank.gif"
+}
+else{
+	return "./" + img
+}}]]></xp:this.url>
+									</xp:image>
+								</xp:panel>
+							</xe:formRow>
+							<xe:formRow id="formRow10"
+								label="Display Search:" for="radioGroup1">
+								<xp:radioGroup id="radioGroup1"
+									value="#{docPreferences.Tx_PrefSearch}" defaultValue="0">
+									<xp:selectItem itemLabel="Yes"
+										itemValue="1" id="selectItem31">
+									</xp:selectItem>
+									<xp:selectItem itemLabel="No"
+										itemValue="0" id="selectItem32">
+									</xp:selectItem>
+								</xp:radioGroup>
+							</xe:formRow>
+							<xe:formRow id="formRow4"
+								label="Display Footer:" for="radioFooter">
+								<xp:radioGroup id="radioFooter"
+									value="#{docPreferences.Tx_PrefFooter}" defaultValue="0">
+									<xp:selectItem itemLabel="Yes"
+										itemValue="1" id="selectItem23">
+									</xp:selectItem>
+									<xp:selectItem itemLabel="No"
+										itemValue="0" id="selectItem24">
+									</xp:selectItem>
+								</xp:radioGroup>
+							</xe:formRow>
+							<xe:formRow id="formRow5"
+								label="Display Legal Text:" for="radioLegal">
+								<xp:radioGroup id="radioLegal"
+									value="#{docPreferences.Tx_PrefLegal}" defaultValue="0">
+									<xp:selectItem itemLabel="Yes"
+										itemValue="1" id="selectItem25">
+									</xp:selectItem>
+									<xp:selectItem itemLabel="No"
+										itemValue="0" id="selectItem26">
+									</xp:selectItem>
+									<xp:eventHandler event="onclick"
+										submit="true" refreshMode="partial"
+										refreshId="pnlRowLegaltext">
+										<xp:this.action><![CDATA[#{javascript:var legVal=getComponent("radioLegal").getValue();
+requestScope.put("displayLegal",legVal)}]]></xp:this.action>
+									</xp:eventHandler>
+								</xp:radioGroup>
+							</xe:formRow>
+
+							<xe:formRow id="formRowLegaltext"
+								label="Legal text:" for="inputLegal">
+								<xe:this.rendered><![CDATA[#{javascript:var legalVal = requestScope.get("displayLegal")
+if (legalVal == "1"){
+	return true;
+}
+else{
+	return false;
+}}]]></xe:this.rendered>
+								<xp:inputTextarea id="inputLegal"
+									style="height:100.0px;width:300.0px"
+									value="#{docPreferences.Tx_ConfigLegalText}">
+								</xp:inputTextarea>
+								<xp:text escape="true"
+									id="computedField1" value="#{requestScope.displayLegal}">
+								</xp:text>
+							</xe:formRow>
+							<xe:formRow id="formRow6"
+								label="Thank You text:" for="inputTextarea2">
+								<xp:inputTextarea id="inputTextarea2"
+									value="#{docPreferences.Tx_ConfigThankYou}"
+									style="height:100.0px;width:300.0px">
+								</xp:inputTextarea>
+							</xe:formRow>
+							<xe:formRow id="formRow7"
+								label="Troubleshooting:">
+								<xp:button value="Reset cache"
+									id="button5" styleClass="lotusBtn">
+									<xp:eventHandler event="onclick"
+										submit="true" refreshMode="complete" id="eventHandler5">
+										<xp:this.action>
+											<xp:openPage
+												name="/resetcache.xsp">
+											</xp:openPage>
+										</xp:this.action>
+									</xp:eventHandler>
+								</xp:button>
+							</xe:formRow>
+							
+
+
+						</xe:formTable>
+					</xp:panel>
+
+					<xp:panel>
+
+
+
+					</xp:panel>
+				</xp:tabPanel>
+				<xp:tabPanel label="Installation" id="tabPanel5">
+
+
+					<xp:panel tagName="h1" styleClass="lotusHeader"
+						style="margin:0 0 10px 0;">
+						What should I do to get CardScanR installed
+						properly?
+					</xp:panel>
+					To get an instance of CardScanR started on your IBM
+					&#160;Lotus&#160;Notes environment take the
+					following steps:
+					<xe:widgetContainer id="widgetContainer3"
+						titleBarText="Instructions" style="margin:10px 0 0 0;">
+						<ol>
+							<li>
+								Download the latest
+								available&#160;version of CardScanR from
+								the&#160;
+								<xp:link escape="true"
+									text="project page" id="link16">
+									<xp:this.value><![CDATA[http://www.openntf.org/internal/home.nsf/project.xsp?action=openDocument&name=Bildr]]></xp:this.value>
+								</xp:link>
+								&#160;on OpenNTF.
+							</li>
+							<li>
+
+								<xp:link escape="true" text="Sign"
+									id="link2"
+									value="http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FFILES_TAB_TOOLS_SIGN_0210.html">
+								</xp:link>
+								&#160; the application and install it on
+								the desired location in your
+								environment.
+							</li>
+
+							<li>
+
+								<xp:link escape="true" text="Configure"
+									id="link4"
+									value="http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_ADDING_USERS_TO_A_DATABASE_ACL_OVERVIEW.html">
+								</xp:link>
+								&#160; the &#160;
+								<xp:span style="font-style:italic">
+									access control list
+								</xp:span>
+								(
+								<xp:link escape="true" text="ACL"
+									id="link3"
+									value="http://www.ibm.com/developerworks/lotus/library/ls-Using_the_ACL/">
+								</xp:link>
+								) according your preferences.
+							</li>
+							<li>
+								Open the application in LN and open the
+								'
+								<xp:span style="font-style:italic">
+									preferences
+								</xp:span>
+								' document (available in the
+								Configuration panel). Enter the correct
+								or desired settings.
+							</li>
+						</ol>
+					</xe:widgetContainer>
+
+					<xe:widgetContainer id="widgetContainer4"
+						titleBarText="Requirements" style="margin:20px 0 0 0;">
+						<ul>
+							<li>
+								CardScanR needs to run on a&#160;
+								<xp:span style="font-weight:bold">
+									local machine
+								</xp:span>
+								with a CardScan device attached.
+							</li>
+							<li>
+								In order to run the application locally
+								in a browser you need to have the HTTP
+								task running.
+							</li>
+						</ul>
+					</xe:widgetContainer>
+
+
+					<xp:br></xp:br>
+					You can launch the application in LN
+					8.5.1&#160;client or in case you know the
+					installation path, type in the address bar an
+					address that follows these pattern:
+					<xp:br></xp:br>
+
+					<xp:panel
+						style="font-family:courier;color:green;">
+						http://localhost/path/file
+					</xp:panel>
+					<xp:br></xp:br>
+					Alternatively:
+					<xp:br></xp:br>
+					<xp:panel
+						style="font-family:courier;color:green;">
+						http://localhost/path/file/admin.xsp
+					</xp:panel>
+					<xp:panel tagName="h2">That's it !</xp:panel>
+
+
+
+
+
+
+				</xp:tabPanel>
+			</xp:tabbedPanel>
+		</xp:panel>
+		<xp:panel id="panelIsNotAdmin" style="margin: 20px 0px;">
+			<xp:this.rendered><![CDATA[#{javascript:code = viewScope.get("isAdmin");
+
+if (code == "false"){
+	return true;
+}
+else{
+	return false;
+}}]]></xp:this.rendered>
+			<xp:panel styleClass="lotusMessage lotusWarning">
+				We doubt you are the administrator...
+			</xp:panel>
+		</xp:panel>
+	</xp:panel>
+
+
+
+
+
+</xp:view>

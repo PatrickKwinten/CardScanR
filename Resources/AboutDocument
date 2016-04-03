@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<helpaboutdocument xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.5'
+ replicaid='C12579FA00396CD6' publicaccess='false' designerversion='8.5.3'
+ default='true' renderpassthrough='true'>
+<noteinfo noteid='126' unid='20212D1EA58512C18025765E004ACA18' sequence='20'>
+<created><datetime>20091029T133654,00+00</datetime></created>
+<modified><datetime dst='true'>20120510T122714,42+02</datetime></modified>
+<revised><datetime dst='true'>20120510T122353,87+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20120510T122714,42+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20120510T122714,42+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name></updatedby>
+<body><richtext>
+<pardef id='1' leftmargin='1in' tabs='L0.5000in L1in L1.5000in L2in L2.5000in L3in L3.5000in L4in'/>
+<par def='1'>This is a web app.</par>
+<par def='1'/>
+<par def='1'>Either run the application in your preferred web browser (local host) or open the Default XPage.</par>
+<par def='1'/>
+<par def='1'>Administrators ([admin] role): please make sure you have created a Configuration document first (view action: More \ Configuration)</par>
+<par def='1'/></richtext></body></helpaboutdocument>
+

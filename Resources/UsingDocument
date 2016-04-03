@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<helpusingdocument xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.5'
+ replicaid='C12579FA00396CD6' publicaccess='false' designerversion='8.5.2'
+ default='true' renderpassthrough='true'>
+<noteinfo noteid='146' unid='5A3EC7166C44CBFC8025765E004C5A78' sequence='18'>
+<created><datetime>20091029T135358,96+00</datetime></created>
+<modified><datetime dst='true'>20120510T122714,58+02</datetime></modified>
+<revised><datetime dst='true'>20110831T125651,16+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20120510T122714,58+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20120510T122714,58+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/O=Quintessens</name></updatedby>
+<body><richtext>
+<pardef id='1' leftmargin='1in' tabs='L0.5000in L1in L1.5000in L2in L2.5000in L3in L3.5000in L4in'/>
+<par def='1'>(c) IBM Corp., 2009 Licensed Materials</par>
+<par def='1'/>
+<par def='1'>Licensed to OpenNTF under one or more contributor license agreements.</par>
+<par def='1'/>
+<par def='1'>See the NOTICE file distributed with this work for additional information</par>
+<par def='1'>regarding copyright ownership.  OpenNTF licenses this file</par>
+<par def='1'>to you under the Apache License, Version 2.0 (the "License");</par>
+<par def='1'>you may not use this file except in compliance with the License.</par>
+<par def='1'>You may obtain a copy of the License at</par>
+<par def='1'/>
+<par def='1'>http://www.apache.org/licenses/LICENSE-2.0</par>
+<par def='1'/>
+<par def='1'>Unless required by applicable law or agreed to in writing,</par>
+<par def='1'>software distributed under the License is distributed on an</par>
+<par def='1'>"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY</par>
+<par def='1'>KIND, either express or implied.  See the License for the</par>
+<par def='1'>specific language governing permissions and limitations</par>
+<par def='1'>under the License. </par></richtext></body></helpusingdocument>
+

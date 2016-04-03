@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="C12579FA00396CD6" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1f6" sequence="48" unid="C6F9362DF9632C1880257616003BDA65">
+<created><datetime dst="true">20090818T115345,33+01</datetime></created>
+<modified><datetime dst="true">20160401T145157,17+02</datetime></modified>
+<revised><datetime dst="true">20160401T145157,16+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160401T145157,17+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20120510T122715,46+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Steve Castledine/OU=Leicester/O=Edia</name><name>CN=Steve Castledine/OU=UK/O=IBM</name><name>CN=Information Systems/O=SANDVIK</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Information Systems/O=SANDVIK</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Information Systems/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+<item name="$TITLE"><text>partContent.xsp</text></item>
+
+
+
+<item name="$Flags"><text>gC~;4</text></item>
+
+
+<item name="$FileNames" sign="true"><text>partContent.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
+
+<item name="$$ScriptName" sign="true" summary="false"><text>partContent.xsp</text></item></note>

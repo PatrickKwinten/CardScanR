@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<!--
+		The following lines are required for Accessibility and are used by
+		screen readers. Please do not remove
+	-->
+	<a href="#mainContent" accesskey="S" class="lotusAccess">
+		<img src="blank.gif" alt="Skip to main content link. Accesskey S" />
+	</a>
+	<div id="lotusFooter" class="lotusFooter">
+		<table cellspacing="0">
+			<tbody>
+				<xp:text escape="false">
+					<xp:this.value><![CDATA[#{javascript:var htmlHead="<tr>";
+var htmlBody="<tr>";
+var y=0;
+var columnClass="";
+
+for (var x=0;x<applicationScope.baseFooterColumns.length;x++){
+	if(x===(applicationScope.baseFooterColumns.length-1)){
+		columnClass=" class=\"lotusLast\"";
+	}else{
+		columnClass="";
+	}	
+	htmlHead+="<th"+columnClass+">"+applicationScope.baseFooterColumns[x].title+"</th>";			
+	htmlBody+="<td"+columnClass+"><ul>";
+	for (y=0;y<applicationScope.baseFooterColumns[x].linkArray.length;y++){	
+		if(@Left(@LowerCase(applicationScope.baseFooterColumns[x].linkArray[y].link),4)==="http"){
+			htmlBody+="<li><a href=\""+applicationScope.baseFooterColumns[x].linkArray[y].link+"\" title=\""+applicationScope.baseFooterColumns[x].linkArray[y].title+"\">"+applicationScope.baseFooterColumns[x].linkArray[y].title+"</a></li>";			
+		}else{
+			htmlBody+="<li><a href=\""+sessionScope.path+"/"+applicationScope.baseFooterColumns[x].linkArray[y].link+"\" title=\""+applicationScope.baseFooterColumns[x].linkArray[y].title+"\">"+applicationScope.baseFooterColumns[x].linkArray[y].title+"</a></li>";			
+		}
+	}
+	htmlBody+="</ul></td>";
+}
+htmlHead+="</tr>";
+htmlBody+="</tr>";
+return htmlHead+htmlBody;
+}]]>
+					</xp:this.value>
+				</xp:text>
+			</tbody>
+		</table>
+	</div>
+</xp:view>

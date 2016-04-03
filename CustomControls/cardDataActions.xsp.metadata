@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.5" replicaid="C12579FA00396CD6" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="232" sequence="176" unid="7BA9E6FCEE06D4FCC12578ED004C3DCD">
+<created><datetime dst="true">20110815T155245,57+02</datetime></created>
+<modified><datetime dst="true">20160401T145156,27+02</datetime></modified>
+<revised><datetime dst="true">20160401T145156,26+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160401T145156,27+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20120510T122715,76+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+<item name="$TITLE"><text>cardDataActions.xsp</text></item>
+<item name="$Flags"><text>gC~4;</text></item>
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>cardDataActions.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
+</note>

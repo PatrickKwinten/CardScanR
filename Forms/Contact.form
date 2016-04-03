@@ -1,0 +1,372 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form name='Contact' alias='$f-contact' xmlns='http://www.lotus.com/dxl' version='9.0'
+ maintenanceversion='1.5' replicaid='C12579FA00396CD6' nocompose='true' publicaccess='false'
+ designerversion='8.5.3' renderpassthrough='true'>
+<noteinfo noteid='1b2' unid='01221E5AC0B82FCEC12578ED006C8A8B' sequence='15'>
+<created><datetime dst='true'>20110815T214533,55+02</datetime></created>
+<modified><datetime dst='true'>20160403T191942,81+02</datetime></modified>
+<revised><datetime dst='true'>20160403T191942,80+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20160403T191942,81+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20120510T122715,12+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name
+>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+<body><richtext>
+<pardef id='1' leftmargin='1in' rightmargin='100%'/>
+<par def='1'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>'Fields' from CardScan:</run></par>
+<table rightmargin='100%' widthtype='fixedleft' refwidth='5.6958in'><tablecolumn
+ width='2.8479in'/><tablecolumn width='2.8479in'/>
+<tablerow>
+<tablecell>
+<pardef id='2' keepwithnext='true' keeptogether='true'/>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_NAME</run></par></tablecell>
+<tablecell>
+<pardef id='3' keepwithnext='true' keeptogether='true'/>
+<par def='3'><field type='text' kind='editable' name='Tx_Name'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='7' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_NAME_PREFIX</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_NamePrefix'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_FIRST_NAME</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_FirstName'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_MIDDLE_NAME</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_MiddleName'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_LAST_NAME</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_LastName'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_NAME_SUFFIX	</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_NameSuffix'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_TITLE</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_Title'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_COMPANY	</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_Company'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_ADDRESS</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_Address'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_STREET</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_Street'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_ADDR1</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_Addr1'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_ADDR2</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_Addr2'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_ADDR3</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_Addr3'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_CITY</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_City'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_STATE</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_State'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_POSTAL_CODE</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_PostalCode'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_COUNTRY	</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_Country'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_2ND_ADDRESS</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_2ndAddress'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_2ND_STREET</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_2ndStreet'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_2ND_ADDR1</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_2ndAddr1'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_2ND_ADDR2</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_2ndAddr2'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_2ND_ADDR3</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_2ndAddr3'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_2ND_CITY</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_2ndCity'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_2ND_STATE</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_2ndState'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_2ND_POSTAL_CODE</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_2ndPostalCode'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_2ND_COUNTRY	</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_2ndCountry'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_PHONE</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_Phone'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_FAX </run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_Fax'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_EMAIL</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_Email'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_WEB_SITE</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_Website'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='2'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/>CRTK_FIELD_OTHER	</run></par></tablecell>
+<tablecell>
+<par def='3'><field type='text' kind='editable' name='Tx_Other'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='8pt'
+ name='Courier New' pitch='fixed' truetype='true' familyid='30' color='green'/></run></par></tablecell></tablerow></table>
+<par def='1'><run><font size='8pt' name='Courier New' pitch='fixed' truetype='true'
+ familyid='30' color='green'/></run></par>
+<pardef id='4'/>
+<par def='4'><field type='text' kind='editable' name='Tx_EventReference'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='7' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></richtext></body>
+<item name='$XPageAlt'><text>test.xsp</text></item>
+<item name='$$ScriptName' summary='false' sign='true'><text>Card</text></item></form>
+

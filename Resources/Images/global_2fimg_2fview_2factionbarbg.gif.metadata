@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><imageresource alias="actionbarbg.gif" comment="gradient background for action bars" designerversion="8" imagename="viewGradient1.gif" language="en" maintenanceversion="1.5" name="global/img/view/actionbarbg.gif" publicaccess="true" replicaid="C12579FA00396CD6" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="166" sequence="20" unid="3869C03BA85BD04AC12576EF00380F39">
+<created><datetime>20100323T111219,13+01</datetime></created>
+<modified><datetime dst="true">20160401T145156,91+02</datetime></modified>
+<revised><datetime dst="true">20160401T145156,90+02</datetime></revised>
+<lastaccessed><datetime dst="true">20160401T145156,91+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20120510T122714,74+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Patrick Kwinten/OU=0460/O=SANDVIK</name><name>CN=Information Systems/O=SANDVIK</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Information Systems/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/OU=0180/O=SANDVIK</name><name>CN=Patrick Kwinten/O=Quintessens</name><name>CN=Patrick Kwinten/O=quintessens</name></updatedby>
+<wassignedby><name>CN=Patrick Kwinten/O=quintessens</name></wassignedby>
+
+<item name="$MimeType" sign="true"><text>image/gif</text></item>
+<item name="$FileModDT" sign="true"><datetime>20070316T123219,95-05</datetime></item>
+<item name="$$ScriptName" sign="true" summary="false"><text>actionbarbg.gif</text></item></imageresource>
